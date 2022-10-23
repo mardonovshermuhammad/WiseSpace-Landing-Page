@@ -1,20 +1,14 @@
 <template>
-      <div>
-        <h1 class=" text-red-600">{{ counts }}</h1>
-      <button class="aaa" @click="count"> count</button>
+    <div class="w-full h-20 bg-red-100 flex  items-center">
+      <div class="container mx-20 flex " >
+        <img width="186" height="38" src="@/static/img/icon.png" alt="">
       </div>
+      <div>
+      </div>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { ref,Ref  } from "vue";
-const counts:Ref<number> = ref(0)
-  function count() {
-    counts.value++;
-  }
 </script>
 <style scoped>
-.aaa{
-  font-family: 'Bold', sans-serif  ;
-  font-weight: 900;
-}
 </style>

@@ -1,10 +1,12 @@
 <template>
  <div>
-  <Tutorial/>
+ <div class="fixed w-full"><Navbar/></div>
+  <Header/>
  </div>
 </template>
 
 <script setup lang="ts">
-import Tutorial from '@/components/Tutorial.vue'
+import Header from './Header.vue'
+import Navbar from './Navbar.vue'
 
 </script>
