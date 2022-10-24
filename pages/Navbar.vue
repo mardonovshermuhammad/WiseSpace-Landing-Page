@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full h-20 bg-white flex  items-center justify-center">
-      <div class="container mx-20 flex justify-between " >
+    <div class=" z-50 w-full h-20 bg-white flex items-center justify-center">
+      <div class=" container flex justify-between" >
         <img width="186" height="38" src="@/static/img/icon.png" alt="">
         <div class="w-[50%] mt-2">
           <headeerMenu/>
