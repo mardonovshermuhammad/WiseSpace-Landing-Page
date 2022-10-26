@@ -19,7 +19,7 @@
           </BaseButton>
           <BaseButton name="some" rounded="sm" color="white" size="sm" variant="text"
             class="flex items-center justify-between gap-2">
-            <BaseIcon name="Download"></BaseIcon>Explore plotform
+            <BaseIcon name="Email"></BaseIcon>Explore plotform
           </BaseButton>
         </div>
       </div>
