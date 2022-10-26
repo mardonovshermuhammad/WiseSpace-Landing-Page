@@ -16,7 +16,8 @@ const data = ref<any[]>(
         id: 2,
         title: "for Students",
         body: [
-          '111','222','33'
+          'Weekly timetable','User friendly mobile application','Students can track their attendance rate in two ways',
+          'Grades from all subjects can be seen in one place','Assignments with deadlines are comfortable and', 'ease to use'
         ],
         showBody: false
     },
@@ -24,7 +25,8 @@ const data = ref<any[]>(
         id: 3,
         title: "for Admin",
         body: [
-          '111','222','33'
+          'Weekly timetable','User friendly mobile application','Students can track their attendance rate in two ways',
+          'Grades from all subjects can be seen in one place','Assignments with deadlines are comfortable and', 'ease to use'
         ],
         showBody: false
     }
@@ -45,6 +47,7 @@ function elementId(id:number){
     </div>
     <div class="w-3/5 h-[500px] ">
       <div v-if="dataId == 1" class=" w-full h-full bg-red-500">
+       <img class="w-full h-full" src="@/static/img/Assignments.png" alt="">
       </div>
       <div  v-if="dataId == 2" class=" w-full h-full bg-blue-500">
       </div>
