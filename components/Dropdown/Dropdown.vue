@@ -11,7 +11,7 @@ const PropsDropdown =  defineProps<prop>()
 const active = ref<boolean>(false)
 const tanlangan = ref<string>('')
 
-let options  = ref<object>([])
+let options  = ref<any>([])
 
 options.value = PropsDropdown.options
 tanlangan.value = PropsDropdown.title
