@@ -6,7 +6,18 @@ interface prop {
   title : string
   options: object
 }
-const PropsDropdown =  defineProps<prop>()
+const PropsDropdown =  defineProps({
+  title:{
+    type: String,
+    default: '',
+  },
+  options:{
+    type: Array,
+    default: [],
+  }
+  
+})
+
 
 const active = ref<boolean>(false)
 const tanlangan = ref<string>('')
