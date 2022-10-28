@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from "vue";
 import Dropdown from "./Dropdown.vue";
-import baseInput from "./baseInput.vue"
+import baseInput from "./baseInput.vue";
 interface arrays {
   name: string;
 }
-const firstName = ref<string>('')
-const lastName = ref<string>('')
-const email = ref<string>('')
-const school = ref<string>('')
-const phone = ref<string>('')
-const title = ref<string>('')
+const firstName = ref<string>("");
+const lastName = ref<string>("");
+const email = ref<string>("");
+const school = ref<string>("");
+const phone = ref<string>("");
+const title = ref<string>("");
 const Options: arrays[] = [
   {
     name: "Film",
@@ -22,6 +22,26 @@ const Options: arrays[] = [
     name: "comedy",
   },
 ];
+function firstName1(params: any) {
+  firstName.value = params;
+  console.log(firstName.value);
+}
+console.log(firstName.value);
+function lastName1(params: any) {
+  lastName.value = params;
+}
+function email1(params: any) {
+  email.value = params;
+}
+function school1(params: any) {
+  school.value = params;
+}
+function phone1(params: any) {
+  phone.value = params;
+}
+function title1(params: any) {
+  title.value = params;
+}
 </script>
 
 <template>
@@ -36,7 +56,7 @@ const Options: arrays[] = [
     </p>
     <div class="flex flex-wrap justify-center">
       <baseInput
-        v-model="firstName"
+        @modelValue="firstName1"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -44,7 +64,7 @@ const Options: arrays[] = [
         class="max-w-[232px] text-[15px] mb-6 mr-4 h-11"
       />
       <baseInput
-        v-model="lastName"
+        @modelValue="lastName1"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -52,16 +72,20 @@ const Options: arrays[] = [
         class="max-w-[232px] text-[15px] mb-6 h-11"
       />
       <baseInput
-        v-model="email"
+        @modelValue="email1"
         :regex="/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/"
         success-msg="All is good"
         error-msg="Work email adress*"
         label-name="Work email adress*"
         class="max-w-[232px] text-[15px] mb-6 mr-4 h-11"
       />
-      <Dropdown class="max-w-[232px] h-11" title="Country*" :options="Options" />
+      <Dropdown
+        class="max-w-[232px] h-11"
+        title="Country*"
+        :options="Options"
+      />
       <baseInput
-        v-model="phone"
+        @modelValue="phone1"
         :regex="/^[+]?998[012345789][0-9]{8}$/"
         success-msg="All is good"
         error-msg="text must be Uzb Phone"
@@ -69,7 +93,7 @@ const Options: arrays[] = [
         class="max-w-[232px] text-[15px] mb-6 mr-4 h-11"
       />
       <baseInput
-        v-model="title"
+        @modelValue="title1"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -77,7 +101,7 @@ const Options: arrays[] = [
         class="max-w-[232px] w-full mb-6 h-11"
       />
       <baseInput
-        v-model="school"
+        @modelValue="school1"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -95,7 +119,9 @@ const Options: arrays[] = [
       placeholder="Message"
     ></textarea>
     <div class="flex justify-center w-full">
-      <button class="py-2 px-6 mr-5 border border-[#E3E3E3] text-[#4F4F4F] rounded-md">
+      <button
+        class="py-2 px-6 mr-5 border border-[#E3E3E3] text-[#4F4F4F] rounded-md"
+      >
         Cancel
       </button>
       <button class="py-2 px-6 text-white rounded-md">Send</button>

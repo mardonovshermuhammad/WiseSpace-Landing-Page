@@ -7,7 +7,7 @@ const props = defineProps([
   "errorMsg",
   "labelName",
 ]);
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["modelValue"]);
 let val = ref<string>("");
 let Message = ref<string>("");
 let validate = ref<boolean>(false);
@@ -15,9 +15,10 @@ let validate = ref<boolean>(false);
 
 // }
 function emitInput(event: any) {
-  emit("update:modelValue", event.target.value);
+  // console.log(event.target.value);
+  emit("modelValue", event.target.value);
   const regex = props.regex;
-  val.value = event.target.value;
+  val.value = event.value;
   if (val.value === "") {
     Message.value = "this field reqired";
   } else if (regex.test(val.value)) {
@@ -83,7 +84,19 @@ function emitInput(event: any) {
   align-items: center;
 }
 
-
+.cut {
+  background-color: white;
+  border-radius: 10px;
+  height: 20px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: 16px;
+  transition: transform 200ms;
+  width: 75px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
 
 .input:focus {
   border: 1px solid cyan;
