@@ -9,6 +9,7 @@
   <Blog/>
   <Testimonials/>
   <formMain/>
+  <Footer/>
  </div>
 </template>
 
@@ -22,5 +23,6 @@ import pricingMain from './pricingMain.vue'
 import Blog from './Blog.vue'
 import Testimonials from "./Testimonials.vue"
 import formMain from './getInTouch/formMain.vue'
+import Footer from '../components/MiniFooter.vue'
 
 </script>
