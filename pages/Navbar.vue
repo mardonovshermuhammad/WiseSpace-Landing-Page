@@ -10,7 +10,11 @@
             </BaseButton>
       </div>
     </div>
-    <Modal @close="modal = false" :isOpen="modal"></Modal>
+    <Modal @close="modal = false" :isOpen="modal">
+       <template v-slot:body>
+         <parent></parent>
+       </template>
+    </Modal>
   </div>
 </template>
 <script setup lang="ts">
@@ -19,6 +23,7 @@ import headeerMenu from '@/components/headeerMenu.vue'
 import BaseButton from '~/components/BaseComponents/buttons/BaseButton.vue';
 import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
 import Modal from '@/components/Modal.vue'
+import parent from "@/components/Dropdown/Parent.vue"
 const modal = ref<boolean>(false)
 function istoggle() {
   modal.value = true

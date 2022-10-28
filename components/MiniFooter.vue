@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseButton from '~/components/BaseComponents/buttons/BaseButton.vue';
+import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
 
 
 </script>
@@ -14,10 +16,22 @@
     <div class="text-white">Privacy & Policy </div>
    </div>
    <div class="flex items-center">
-     <img class="mr-5" src="../assets/icons/facebook.svg" alt="">
-     <img class="mr-5" src="../assets/icons/instagram.svg" alt="">
-     <img class="mr-5" src="../assets/icons/in.svg" alt="">
-     <img src="../assets/icons/instagram.svg" alt="">
+    <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
+              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
+            </BaseButton>
+      </div>
+      <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
+              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
+            </BaseButton>
+      </div>
+      <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
+              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
+            </BaseButton>
+      </div>
+      <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
+              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
+            </BaseButton>
+      </div>
    </div>
     </div>
 </div>

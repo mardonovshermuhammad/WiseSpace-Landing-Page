@@ -11,7 +11,7 @@ function Submited() {
 }
 </script>
 <template>
-    <div class="bg-white rounded-xl shadow-xl md:flex md:justify-between md:w-[1140px] p-5">
+            <div class="bg-white rounded-xl shadow-xl md:flex md:justify-between p-5 md:mx-12 mx-6">
         <div class="relative bg-[#002F5F] p-5 text-white rounded-xl mr-5 md:w-[500px] z-[1]">
             <div class="z-[10]">
                 <h1 class="text-4xl mb-3">Contact information </h1>

@@ -16,8 +16,8 @@ const data = ref<any[]>(
         id: 2,
         title: "for Students",
         body: [
-          'Weekly timetable','User friendly mobile application','Students can track their attendance rate in two ways',
-          'Grades from all subjects can be seen in one place','Assignments with deadlines are comfortable and', 'ease to use'
+          'Weekly timetable ','Assignments with deadlines are comfortable and ease to use','User friendly mobile application',
+          'Students can track their attendance rate in two ways Grades from all subjects can be seen in one place',
         ],
         showBody: false
     },
@@ -25,8 +25,8 @@ const data = ref<any[]>(
         id: 3,
         title: "for Admin",
         body: [
-          'Weekly timetable','User friendly mobile application','Students can track their attendance rate in two ways',
-          'Grades from all subjects can be seen in one place','Assignments with deadlines are comfortable and', 'ease to use'
+          'Creating Branches',
+          'Full statistics about finance, students, employees and etc Assigning roles and permissions Mass import functionality (users, courses, faculties) - using one universal excel template)'
         ],
         showBody: false
     }
