@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import BaseIcon from '@/components/BaseComponents/BaseIcons/BaseIcon.vue'
 const Title = ref<any[]>([
-    { icon: "icon", name: "University" },
-    { icon: "icon", name: "School" },
-    { icon: "icon", name: "Education center" },
+    { icon: "University", name: "University" },
+    { icon: "School", name: "School" },
+    { icon: "University", name: "Education center" },
    ])
 const Text = ref<any[]>([
     { icon: "icon", desc: "All-in-one integrated platform (LMS, ERP & CRM)" },
@@ -22,10 +23,12 @@ const Text = ref<any[]>([
      <div class="container">
         <div class=" flex flex-col items-center">
             <div class="w-4/5 flex justify-between">
-            <div class=" w-1/3 flex justify-center border-b border-white pb-4" v-for="(user,i) in Title" :key="i">
+            <div class=" w-1/3 flex justify-center border-b border-white pb" v-for="(user,i) in Title" :key="i">
             <div class=" flex items-center cursor-pointer">
-                <h1 class="text-white mr-4 font-medium text-lg">{{user.icon}}</h1>
-                <h1  class="text-[#BBBBBB]">{{user.name}}</h1>
+                <div class="mr-4 ">
+                  <BaseIcon class="text-white" :name="user.icon"></BaseIcon>
+                </div>
+                <h1  class="text-[#BBBBBB] mt-2">{{user.name}}</h1>
             </div>
             </div>
             </div>
@@ -37,8 +40,10 @@ const Text = ref<any[]>([
             <div class="w-4/5 ml-[10%]">
               <div class="w-full h-full flex justify-between flex-wrap">
                  <div class="w-1/3 text-white flex mb-8" v-for="(item,i) in Text" :key="i">
-                   <h1 class="mx-4">{{item.icon}}</h1>
-                   <h5 class="text-[15px] leading-4 tracking-widest font-extralight" >{{ item.desc }}</h5>
+                  <div class="mr-5">
+                  <BaseIcon class="text-white" name="Checked"></BaseIcon>
+                </div>
+                   <h5 class="text-[15px] leading-4 tracking-widest font-extralight mr-7" >{{ item.desc }}</h5>
                  </div>
               </div>
             </div>

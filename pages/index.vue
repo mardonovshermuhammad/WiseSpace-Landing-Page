@@ -7,8 +7,8 @@
   <features/>
   <pricingMain/>
   <Blog/>
-  <scroll></scroll>
-
+  <Testimonials/>
+  <formMain/>
  </div>
 </template>
 
@@ -20,6 +20,7 @@ import ProductsCard from './ProductsCard.vue'
 import features from "./Features.vue"
 import pricingMain from './pricingMain.vue'
 import Blog from './Blog.vue'
-import scroll from '@/components/scroll/scroll.vue'
+import Testimonials from "./Testimonials.vue"
+import formMain from './getInTouch/formMain.vue'
 
 </script>
