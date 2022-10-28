@@ -16,8 +16,15 @@ module.exports = {
         },
         primary: {
           900: '#002F5F'
+        },
+        blue : {
+          500 : '#4270F7'
         }
       },
+      boxShadow: {
+        'bxShadow': '0px 0px 8px rgba(0, 0, 0, 0.1)',
+        'modalShadow': '0px 4px 20px rgba(0, 0, 0, 0.25)',
+      }
     },
   },
   plugins: [],

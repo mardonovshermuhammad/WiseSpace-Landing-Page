@@ -6,7 +6,7 @@ import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
 </script>
 
 <template>
-<div class=" bg-bgBtn ">
+<div class="bg-primary-900 mt-24">
     <div class="flex  md:flex-row  flex-col justify-between md:px-20 md:py-8  md:m-auto px-7 py-4 max-w-[1280px]">
         <div class="text-white md:mb-0  mb-5">
     2022 Wisesoace.uz
