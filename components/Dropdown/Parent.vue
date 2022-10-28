@@ -1,9 +1,16 @@
 <script setup lang="ts">
+import {ref} from 'vue'
 import Dropdown from "./Dropdown.vue";
 import baseInput from "./baseInput.vue"
 interface arrays {
   name: string;
 }
+const firstName = ref<string>('')
+const lastName = ref<string>('')
+const email = ref<string>('')
+const school = ref<string>('')
+const phone = ref<string>('')
+const title = ref<string>('')
 const Options: arrays[] = [
   {
     name: "Film",
@@ -29,6 +36,7 @@ const Options: arrays[] = [
     </p>
     <div class="flex flex-wrap justify-center">
       <baseInput
+        v-model="firstName"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -36,6 +44,7 @@ const Options: arrays[] = [
         class="max-w-[232px] text-[15px] mb-6 mr-4 h-11"
       />
       <baseInput
+        v-model="lastName"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -43,6 +52,7 @@ const Options: arrays[] = [
         class="max-w-[232px] text-[15px] mb-6 h-11"
       />
       <baseInput
+        v-model="email"
         :regex="/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/"
         success-msg="All is good"
         error-msg="Work email adress*"
@@ -51,6 +61,7 @@ const Options: arrays[] = [
       />
       <Dropdown class="max-w-[232px] h-11" title="Country*" :options="Options" />
       <baseInput
+        v-model="phone"
         :regex="/^[+]?998[012345789][0-9]{8}$/"
         success-msg="All is good"
         error-msg="text must be Uzb Phone"
@@ -58,6 +69,7 @@ const Options: arrays[] = [
         class="max-w-[232px] text-[15px] mb-6 mr-4 h-11"
       />
       <baseInput
+        v-model="title"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
@@ -65,6 +77,7 @@ const Options: arrays[] = [
         class="max-w-[232px] w-full mb-6 h-11"
       />
       <baseInput
+        v-model="school"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"

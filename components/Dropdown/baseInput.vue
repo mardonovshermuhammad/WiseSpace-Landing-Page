@@ -15,9 +15,9 @@ let validate = ref<boolean>(false);
 
 // }
 function emitInput(event: any) {
-  emit("update:modelValue", event.value);
+  emit("update:modelValue", event.target.value);
   const regex = props.regex;
-  val.value = event.value;
+  val.value = event.target.value;
   if (val.value === "") {
     Message.value = "this field reqired";
   } else if (regex.test(val.value)) {
@@ -83,19 +83,7 @@ function emitInput(event: any) {
   align-items: center;
 }
 
-.cut {
-  background-color: white;
-  border-radius: 10px;
-  height: 20px;
-  position: absolute;
-  top: calc(50% - 15px);
-  left: 16px;
-  transition: transform 200ms;
-  width: 75px;
-  align-items: center;
-  justify-content: center;
-  display: none;
-}
+
 
 .input:focus {
   border: 1px solid cyan;
