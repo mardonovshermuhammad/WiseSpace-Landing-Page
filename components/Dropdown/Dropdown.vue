@@ -85,7 +85,7 @@ border-radius: 5px;
 
 .selected::after {
   content: "";
-  background: url("../assets/icons/arrow-down.svg");
+  /* background: url("../assets/icons/arrow-down.svg"); */
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;

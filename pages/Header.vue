@@ -1,10 +1,19 @@
 <template>
   <div class="imgHerader">
     <div class="backround flex items-center justify-center">
-      <div class="container">
+      <div class="container  mx-auto px-4">
         <div class="flex items-center -mt-3">
-          <h1 class="text-[#FF6B35] text-4xl font-bold tracking-wider">WiseSpace</h1>
-          <h1 class=" text-white text-4xl font-bold tracking-wider mx-3">for <span class="ml-4">University</span></h1>
+          <h1 class="text-[#FF6B35] text-4xl mr-5 font-bold tracking-wider">WiseSpace<span class="text-white ml-4">for</span></h1>
+          <h1 class="header flex text-btnColor font-bold text-4xl tracking-[0.8px]">
+            <div class="headerTextSlider">
+              <ul class="headerTextSlidersWords">
+                <li>Unversity</li>
+                <li>Scholl</li>
+                <li>Education center</li>
+                <li>Unversity</li>
+              </ul>
+            </div>
+          </h1>
         </div>
         <div class="my-3">
           <p class="text-[16px] text-white font-thin tracking-widest w-[40%] ">Learning Management System WiseSpace is a
@@ -14,9 +23,9 @@
             and learners by automating the learning process.</p>
         </div>
         <div class="flex gap-2 items-center">
-          <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
+          <div  @click="istoggle"><BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
             <BaseIcon name="Download"></BaseIcon>Get 30-day Free Trail
-          </BaseButton>
+          </BaseButton></div>
           <BaseButton name="some" rounded="sm" color="white" size="sm" variant="text"
             class="flex items-center justify-between gap-2">
             <BaseIcon name="Download"></BaseIcon>Explore plotform
@@ -24,11 +33,18 @@
         </div>
       </div>
     </div>
+    <Modal @close="modal = false" :isOpen="modal"></Modal>
   </div>
 </template>
 <script setup lang="ts">
+import { ref } from "vue"
 import BaseButton from '~/components/BaseComponents/buttons/BaseButton.vue';
 import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
+import Modal from '@/components/Modal.vue'
+const modal = ref<boolean>(false)
+function istoggle() {
+  modal.value = true
+}
 </script>
 <style scoped>
 .imgHerader {
@@ -39,10 +55,38 @@ import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
   width: 100%;
   height: 100vh;
 }
-
 .backround {
   background: linear-gradient(rgba(0, 47, 95, 0.7) 80%, rgb(0, 48, 95));
   width: 100%;
   height: 100%;
+}
+.header {
+  display: inline-flex;
+  height: 1.2em;
+  overflow: hidden;
+}
+.headerTextSlider {
+  line-height: 1.2em;
+  position: relative;
+  bottom: 0;
+  animation: slide-vertically infinite 4s 2s ease-in-out;
+  color: #fff;
+}
+.headerTextSlidersWords {
+  list-style: none;
+}
+@keyframes slide-vertically {
+  0% {
+    bottom: 0;
+  }
+  33.3% {
+    bottom: 1.2em;
+  }
+  66.6% {
+    bottom: 2.4em;
+  }
+  100% {
+    bottom: 3.6em;
+  }
 }
 </style>
