@@ -7,16 +7,14 @@ const props = defineProps([
   "errorMsg",
   "labelName",
 ]);
-const emit = defineEmits(["modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 let val = ref<string>("");
 let Message = ref<string>("");
 let validate = ref<boolean>(false);
-// function isEmailValid() {
 
-// }
 function emitInput(event: any) {
   // console.log(event.target.value);
-  emit("modelValue", event.target.value);
+  emit("update:modelValue", event.target.value);
   const regex = props.regex;
   val.value = event.value;
   if (val.value === "") {
@@ -35,8 +33,8 @@ function emitInput(event: any) {
     <input
       ref="email"
       id="firstname"
-      :value="modelValue"
-      @input="emitInput($event)"
+     :value="modelValue"
+     @keyup="emitInput($event)"
       class="input"
       :style="
         val != ''
