@@ -49,7 +49,7 @@ function title1(params: any) {
     class="flex flex-col items-center justify-start p-5 shadow-modalShadow max-w-[520px] w-full m-auto mt-20"
   >
     <h2 class="text-center text-[30px] mb-2">
-      Try <span class="text-orangeStyle">WiseSpace</span> now
+      Try <span class="text-orange-500">WiseSpace</span> now
     </h2>
     <p class="opacity-40 text-sm mb-4 text-black">
       You will have free consultation before getting trall
@@ -115,16 +115,16 @@ function title1(params: any) {
       />
     </div>
     <textarea
-      class="w-full mb-7 px-6 py-[11px] border border-[#E3E3E3] rounded outline-none"
+      class="w-full mb-7 px-6 h-[120px] max-h-[120px] py-[11px] border border-[#E3E3E3] rounded outline-none"
       placeholder="Message"
     ></textarea>
     <div class="flex justify-center w-full">
       <button
-        class="py-2 px-6 mr-5 border border-[#E3E3E3] text-[#4F4F4F] rounded-md"
+        class="py-2 px-6 mr-5 border border-[#E3E3E3] text-[#4F4F4F] rounded-md hover:bg-blue-500 hover:text-white"
       >
         Cancel
       </button>
-      <button class="py-2 px-6 text-white rounded-md">Send</button>
+      <button class="py-2 px-6 text-white rounded-md hover:bg-opacity-95 bg-primary-900">Send</button>
     </div>
   </div>
 </template>
