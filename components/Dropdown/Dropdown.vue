@@ -2,10 +2,10 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 
-interface prop {
-  title : string
-  options: object
-}
+// interface prop {
+//   title : string
+//   options: object
+// }
 const PropsDropdown =  defineProps({
   title:{
     type: String,
@@ -21,10 +21,10 @@ const PropsDropdown =  defineProps({
 
 const active = ref<boolean>(false)
 const tanlangan = ref<string>('')
-
 let options  = ref<any>([])
-
 options.value = PropsDropdown.options
+console.log(options.value);
+
 tanlangan.value = PropsDropdown.title
 function selected() {
   active.value = !active.value
@@ -34,7 +34,6 @@ function selected() {
     active.value = false
   }
 </script>
-
 <template>
       <div class="select-box">
         <div class="options-container" :class="active ? 'active' : '' " >
@@ -66,11 +65,16 @@ h2 {
 
 .select-box {
   display: flex;
-  width: 400px;
+  width: 100%;
   flex-direction: column;
+  position: relative;
 }
 
 .select-box .options-container {
+  position: absolute;
+  border: 1px solid #e3e3e3;
+  top: calc(100% + 7px);
+  z-index: 50;
   background: #fff;
   color: rgba(0, 0, 0, 0.38);
   max-height: 0;
@@ -80,13 +84,14 @@ h2 {
   border-radius: 8px;
   overflow: hidden;
   order: 1;
+ 
+
 }
 
 
 .selected {
   background: #fff;
   border-radius: 8px;
-  margin-bottom: 8px;
   color: rgba(0, 0, 0, 0.38);
   position: relative;
   border: 1px solid #E3E3E3;
@@ -96,7 +101,7 @@ border-radius: 5px;
 
 .selected::after {
   content: "";
-  /* background: url("../assets/icons/arrow-down.svg"); */
+  background: url("../../static/icons/arrow-down.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -131,12 +136,15 @@ border-radius: 5px;
 
 .select-box .option,
 .selected {
-  padding: 11px 24px;
+  display: flex;
+  padding: 11px 16px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   font-size: 15px;
-  max-height: 45px;
 }
-
 .select-box .option:hover {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -148,5 +156,4 @@ border-radius: 5px;
 .select-box .option .radio {
   display: none;
 }
-
 </style>

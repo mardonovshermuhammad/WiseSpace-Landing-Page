@@ -7,7 +7,7 @@ const props = defineProps([
   "errorMsg",
   "labelName",
 ]);
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["modelValue"]);
 let val = ref<string>("");
 let Message = ref<string>("");
 let validate = ref<boolean>(false);
@@ -15,7 +15,8 @@ let validate = ref<boolean>(false);
 
 // }
 function emitInput(event: any) {
-  emit("update:modelValue", event.value);
+  // console.log(event.target.value);
+  emit("modelValue", event.target.value);
   const regex = props.regex;
   val.value = event.value;
   if (val.value === "") {
