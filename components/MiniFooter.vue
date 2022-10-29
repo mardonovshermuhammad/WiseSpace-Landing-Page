@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import BaseButton from '~/components/BaseComponents/buttons/BaseButton.vue';
+import { ref }  from "vue"
 import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
-
-
+const IconName = ref<any[]>([
+    {Name: 'Facebook'},
+    {Name: 'Instagram'},
+    {Name: 'Linkedin'},
+    {Name: 'Telegram'}
+])
 </script>
 
 <template>
@@ -15,23 +19,10 @@ import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
     <div class="text-white mr-7">Terms & Conditions  </div>
     <div class="text-white">Privacy & Policy </div>
    </div>
-   <div class="flex items-center">
-    <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
-              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
-            </BaseButton>
-      </div>
-      <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
-              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
-            </BaseButton>
-      </div>
-      <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
-              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
-            </BaseButton>
-      </div>
-      <div> <BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
-              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
-            </BaseButton>
-      </div>
+   <div class="flex items-center text-white">
+    <div v-for="name in IconName" class="mr-5"> 
+     <BaseIcon :name="name.Name"></BaseIcon>
+    </div>
    </div>
     </div>
 </div>

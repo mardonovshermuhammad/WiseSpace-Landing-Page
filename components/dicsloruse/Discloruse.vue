@@ -35,7 +35,7 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
         class="py-2 px-6 flex items-center justify-between w-full text-left font-bold text-[#BDBDBD] "
         @click.prevent="onClick($event, todo.id)">
         <span :class="{'text-[#002F5F]':(index+1 == itemId)}" 
-              class="text-lg uppercase font-semibold tracking-wider">{{ todo.title }}</span>
+              class="md:text-lg text-[20px] uppercase font-semibold tracking-wider">{{ todo.title }}</span>
         <span class="icon text-[#BDBDBD]" >
           <span class="icon__line colors " :class="{'colors2':(index+1 == itemId)}"></span>
           <span class="icon__line colors" :class="{'colors2':(index+1 == itemId)}"></span>
@@ -54,6 +54,17 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
           <span class=" text-[17px]">&#8226;</span> {{ item}}
           </li>
           </ol> 
+          <div class="md:hidden flex">
+            <div  v-if="index+1 == 1" >
+            <img class="w-full h-full" src="@/static/img/Assignments.png" alt="">
+          </div>
+          <div  v-if="index+1 == 2" class="md:hidden flex">
+            <img class="w-full h-full" src="@/static/img/headerImg.png" alt="">
+          </div>
+          <div  v-if="index+1 == 3" class="md:hidden flex">
+            <img class="w-full h-full" src="@/static/img/Home-min.png" alt="">
+          </div>
+          </div>
           </div>
         </div>
       </transition>

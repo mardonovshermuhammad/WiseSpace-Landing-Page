@@ -24,12 +24,16 @@ const items = ref<any[]>([
 ]);
 </script>
 <template>
- <div class="w-full pt-16">
-    <h1 class="text-center mb-8 text-4xl font-bold">Blog</h1>
-    <div>
-        <Carousel :items="items" ></Carousel>
+ <div class="flex justify-center">
+  <div class="container">
+    <div class="w-full sm:pt-16 mt-4">
+      <h1 class="text-center sm:mb-8 mb-0 md:text-4xl text-[30px] font-bold">Blog</h1>
+      <div>
+          <Carousel :items="items" ></Carousel>
+      </div>
     </div>
   </div>
+ </div>
 </template>
 <style scoped>
 

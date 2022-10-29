@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {PropType,ref } from "vue";
+import {PropType} from "vue";
 import UseCarousel from './UseCarousel'
+import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
 const props = defineProps({
     items:{
     type: Array as PropType<Array<any>>,
@@ -20,19 +21,20 @@ const props = defineProps({
     }
     }
 })
-const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mousedown} = UseCarousel(props)
+const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mousedown,carouselWidth} = UseCarousel(props)
 
 </script>
 <template>
-  <div class="w-full h-[500px] flex justify-center">
+  <div class="w-full sm:h-[500px] h-[400px] flex justify-center">
   <div class=" container">
       <div class="card-carousel-wrapper">
-        <div
-            class="card-carousel--nav__left"
+        <div 
+            class=" cursor-pointer"
             @click="moveCarousel(-1)"
-            :disabled="atHeadOfList"
-        ></div>
-        <div  :style="{ width: (paginationFactor*3-20)+'px',  }" class="card-carousel ">
+            :disabled="atHeadOfList">
+              <BaseIcon name="Left"></BaseIcon>
+        </div>
+        <div  :style="{ width: (paginationFactor*carouselWidth-20)+'px',  }" class="card-carousel ">
             <div class="card-carousel--overflow-container">
             <div
                 class="card-carousel-cards"
@@ -40,8 +42,8 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
                 transform: 'translateX' + '(' + currentOffset + 'px' + ')',
                 }">
                 <div @mouseup="mousedown" class="card-carousel--card shadow-lg shadow-black-500 " v-for="item in items">
-                    <div class= "flex flex-col items-start justify-center w-96 
-                            py-5 px-4 max-w-[352px] group hover:shadow-bxShadow"> 
+                    <div class= "flex flex-col items-start justify-center
+                            py-5 px-4 sm:w-[352px] w-[300px] group hover:shadow-bxShadow"> 
                         <div class="overflow-hidden rounded-b  rounded-t">
                         <img  class="group-hover:scale-110 transition-all duration-600"
                              :src="require('@/static/img/'+ item.img + '.png')" />
@@ -59,10 +61,10 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
             </div>
         </div>
         <div
-        class="card-carousel--nav__right"
+        class=" cursor-pointer"
         @click="moveCarousel(1)"
         :disabled="atEndOfList"
-      ></div>
+      ><BaseIcon name="Right"></BaseIcon></div>
     </div>
     </div>
   </div>
@@ -88,7 +90,6 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
   display: inline-block;
   width: 15px;
   height: 15px;
-  padding: 10px;
   box-sizing: border-box;
   border-top: 2px solid #42b883;
   border-right: 2px solid #42b883;

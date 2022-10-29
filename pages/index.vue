@@ -9,6 +9,7 @@
   <Blog/>
   <Testimonials/>
   <Footer/>
+  <MiniFooter/>
  </div>
 </template>
 
@@ -22,6 +23,5 @@ import pricingMain from './pricingMain.vue'
 import Blog from './Blog.vue'
 import Testimonials from "./Testimonials.vue"
 import Footer from './Footer.vue'
-
-
+import MiniFooter from '@/components/MiniFooter.vue'
 </script>

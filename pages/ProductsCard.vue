@@ -22,8 +22,9 @@ const Text = ref<any[]>([
     <div class="bg-[#002F5F] flex justify-center pb-4">
      <div class="container">
         <div class=" flex flex-col items-center">
-            <div class="w-4/5 flex justify-between">
-            <div class=" w-1/3 flex justify-center border-b border-white pb" v-for="(user,i) in Title" :key="i">
+            <div class="w-4/5 md:flex md:justify-between">
+            <div class=" md:w-1/3 f-full flex justify-center border-b border-white md:my-0" 
+               v-for="(user,i) in Title" :key="i" :class="{'my-2': i==1}">
             <div class=" flex items-center cursor-pointer">
                 <div class="mr-4 ">
                   <BaseIcon class="text-white" :name="user.icon"></BaseIcon>
@@ -32,14 +33,16 @@ const Text = ref<any[]>([
             </div>
             </div>
             </div>
-            <div class="w-4/5 my-12 h-[550px] overflow-hidden shadow-black-900 shadow-xl rounded-lg z-0">
+            <div class="w-4/5 my-12 2xl:h-[650px] xl:h-[550px] lg:h-[450px] md:h-[300px] 
+                 h-auto overflow-hidden shadow-black-900 shadow-xl rounded-lg z-0">
               <div class="w-full h-full z-0 ">
-                 <img class="imganimat z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt="">
+                 <img class=" md:flex hidden  imganimat z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt="">
+                 <img class=" md:hidden flex  z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt=""></img>
               </div>
             </div>
             <div class="w-4/5 ml-[10%]">
-              <div class="w-full h-full flex justify-between flex-wrap">
-                 <div class="w-1/3 text-white flex mb-8" v-for="(item,i) in Text" :key="i">
+              <div class="w-full h-full lg:flex lg:justify-between flex-wrap">
+                 <div class="lg:w-1/3 w-full text-white flex mb-8" v-for="(item,i) in Text" :key="i">
                   <div class="mr-5">
                   <BaseIcon class="text-white" name="Checked"></BaseIcon>
                 </div>
@@ -61,7 +64,7 @@ const Text = ref<any[]>([
     transform: translate3d(0, 0, 0);
    } 
    50%{
-    transform: translate3d(0,-60%, 0)
+    transform: translate3d(0,-50%, 0)
    }
    100%{
     transform: translate3d(0, 0, 0);

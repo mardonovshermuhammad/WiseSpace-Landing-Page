@@ -1,9 +1,21 @@
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 export default function Usecarousel(props:any) {
 const items = ref<any[]>(props.items)
 const currentOffset = ref<number>(0);
 const windowSize = ref<number>(3);
 const paginationFactor = ref<number>(372);
+const carouselWidth = ref<number>(3)
+onMounted(() => {
+  if (window.innerWidth < 1280 ){
+    carouselWidth.value = 2
+  }
+  if (window.innerWidth < 830 ){
+    carouselWidth.value = 1
+  }
+  if (window.innerWidth < 640 ){
+    paginationFactor.value = 320
+  }
+})
 function atEndOfList() {
   return (
     currentOffset.value <=
@@ -25,5 +37,5 @@ function moveCarousel(direction: number) {
     currentOffset.value += paginationFactor.value;
   }
 }
-return  { moveCarousel,atHeadOfList,currentOffset,atEndOfList,paginationFactor,mousedown }
+return  { moveCarousel,atHeadOfList,currentOffset,atEndOfList,paginationFactor,mousedown,carouselWidth }
 }

@@ -3,33 +3,34 @@
     <div class="backround flex items-center justify-center">
       <div class="container  mx-auto px-4">
         <div class="flex items-center -mt-3">
-          <h1 class="text-[#FF6B35] text-4xl mr-5 font-bold tracking-wider">WiseSpace<span class="text-white ml-4">for</span></h1>
+          <h1 class="text-[#FF6B35] md:text-4xl text-[19px] mr-5 font-bold tracking-wider">WiseSpace<span class="text-white ml-4">for</span></h1>
           <h1 class="header flex text-btnColor font-bold text-4xl tracking-[0.8px]">
             <div class="headerTextSlider">
               <ul class="headerTextSlidersWords">
-                <li>Unversity</li>
-                <li>Scholl</li>
-                <li>Education center</li>
-                <li>Unversity</li>
+                <li class="md:text-4xl text-[19px]">Unversity</li>
+                <li class="md:text-4xl text-[19px]">Scholl</li>
+                <li class="md:text-4xl text-[19px]">Education center</li>
               </ul>
             </div>
           </h1>
         </div>
-        <div class="my-3">
-          <p class="text-[16px] text-white font-thin tracking-widest w-[40%] ">Learning Management System WiseSpace is a
+        <div class="md:my-3">
+          <p class="text-[16px] text-white font-thin tracking-widest md:w-[40%] w-full ">Learning Management System WiseSpace is a
             powerful and efficient online platform that adapts to the purpose of
             your educational organization. The system is easy to use, saves valuable time of adminstration staff,
             teachers
             and learners by automating the learning process.</p>
         </div>
-        <div class="flex gap-2 items-center">
+        <div class="md:flex md:mt-0 mt-3 gap-2 items-center">
           <div  @click="istoggle"><BaseButton name="some" rounded="sm" size="sm" color="orange" class="flex items-center justify-between gap-2">
             <BaseIcon name="Download"></BaseIcon>Get 30-day Free Trail
           </BaseButton></div>
-          <BaseButton name="some" rounded="sm" color="white" size="sm" variant="text"
-            class="flex items-center justify-between gap-2">
-            <BaseIcon name="Download"></BaseIcon>Explore plotform
-          </BaseButton>
+           <div class="md:mt-0 mt-3">
+             <BaseButton name="some" rounded="sm" color="white" size="md" variant="text"
+               class="flex items-center justify-between gap-2">
+               <BaseIcon name="Download"></BaseIcon>Explore plotform
+             </BaseButton>
+           </div>
         </div>
       </div>
     </div>

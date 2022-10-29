@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref,PropType } from 'vue'
+import { ref } from 'vue'
 const props = defineProps({
     itemsLenght:{
         type: Number,
@@ -42,16 +42,6 @@ function mousemove(e:any) {
                     ref="werty" class="items flex justify-between scrollbar-hide py-4">
                      <slot name="Slotcard"></slot>
             </div>
-             <div class=" w-full flex justify-center">
-             <div  v-for="(text,i) in 10" :key="i">
-             <!-- <span class="w-[20px] h-[20px] text-[25px] text-black"
-                  >
-                 {{werty.scrollLeft >= scrollLefts ? '&#186;': '&#8226;'}}</span> -->
-                 <!-- <span class="w-[20px] h-[20px] mr-4 text-[25px] text-black">
-                 {{(lenghts< 440 && i<3) ? '&#8226;': '&#186;'}}
-                 {{(lenghts > 440 && lenghts < 440*i && i == 3) ? '&#8226;': '&#186;'}}</span> -->
-             </div>
-             </div>
          </div>
     </div>
    </div>

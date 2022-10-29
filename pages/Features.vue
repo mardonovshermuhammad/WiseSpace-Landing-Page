@@ -42,10 +42,10 @@ function elementId(id:number){
   <div class="container">
     <h1 class="text-center text-4xl font-bold uppercase tracking-widest mb-10">Features</h1>
     <div class="flex justify-between">
-    <div class="w-1/3">
+    <div class="md:w-1/3 w-full ">
       <Discloruse :todos="data" @elementId="elementId" />
     </div>
-    <div class="w-3/5 h-[500px] ">
+    <div class="w-3/5 h-[500px] md:flex hidden">
       <div v-if="dataId == 1" class=" w-full h-full bg-red-500">
        <img class="w-full h-full" src="@/static/img/Assignments.png" alt="">
       </div>
