@@ -23,7 +23,6 @@ const active = ref<boolean>(false)
 const tanlangan = ref<string>('')
 let options  = ref<any>([])
 options.value = PropsDropdown.options
-console.log(options.value);
 
 tanlangan.value = PropsDropdown.title
 function selected() {
