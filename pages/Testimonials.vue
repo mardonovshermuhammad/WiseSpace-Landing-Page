@@ -21,14 +21,14 @@ const cards = <Card> {
     <div class=" mt-10 flex flex-col items-start justify-center w-[352px] h-[235px]  p-[20px]  rounded-lg shadow-black">
         <div class="flex items-start justify-center">
             <div class="mr-2">
-            <img class="w-[48px]  max-h-12 rounded-[50%] h-12" src="@/static/img/Home-min.png" alt="">
+            <img class="w-[48px]  max-h-12 rounded-[50%] h-12" src="@/static/img/Home-min.png"  alt="">
             </div>
             <div class="flex flex-col items-start justify-start mb-7">
-            <p class="text-lg font-semibold"   >{{cards.name}}</p>
-            <p class="text-base font-normal">{{cards.whoIs}}</p>
+            <p class="text-lg font-semibold font-Msemibold tracking-little text-primary-900"   >{{cards.name}}</p>
+            <p class="text-base font-normal font-Mregular tracking-little text-rgb-blue-500  ">{{cards.whoIs}}</p>
             </div>
         </div>
-        <p class="text-base font-normal w-full" >{{cards.comment}}</p>
+        <p class="text-base font-normal font-Mregular  tracking-little  text-rgb-blue-500   w-full" >{{cards.comment}}</p>
      </div>
     </div>
   </template>
