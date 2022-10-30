@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import{ ref, Ref } from "vue"
 // name: string, to:string
-const menu = ref<object[]>([
+const menu = ref<any[]>([
     {name: 'Products', to: '1'},
     {name: 'Features', to: '2'},
     {name: 'Pricing', to: '3'},

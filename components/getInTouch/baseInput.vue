@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import { ref, useAttrs } from "vue";
+import { ref, useAttrs, defineEmits } from "vue";
 const attrs = useAttrs();
 const props = defineProps(["modelValue", 'regex', 'successMsg', 'errorMsg','labelName']);
-const emit = defineEmits(["update:modelValue"]);
+
+const emit = defineEmits(['update:modelValue']);
 let val = ref<string>('')
 let Message = ref<string>('')
 let validate = ref<boolean>(false)
-function isEmailValid() {
-
-
-}
-function emitInput(event:any) {
-    emit('update:modelValue', event.value)
+function emitInput(event: any) {
+    console.log(event.target.value);
+    emit('update:modelValue', event.target.value)
     const regex = props.regex
-    val.value = event.value
+    val.value = event.target.value
     if (val.value === "") {
         Message.value = 'this field reqired'
 
@@ -32,7 +30,7 @@ function emitInput(event:any) {
 </script>
 <template>
     <div class="input-container mt-5 mb-5">
-        <input ref="email" id="firstname" :value="modelValue" @input="emitInput($event)" class="input"
+        <input ref="email" id="firstname" :value="props.modelValue" v-on:input="emitInput($event)" class="input"
             :style="val != '' ? (validate ? 'border:2px solid green' : 'border:2px solid red') : Message = ''"
             type="text" placeholder=" " />
         <div class="cut"></div>
