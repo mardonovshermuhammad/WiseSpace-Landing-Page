@@ -42,6 +42,8 @@ function phone1(params: any) {
 function title1(params: any) {
   title.value = params;
 }
+console.log(firstName.value);
+
 </script>
 
 <template>
@@ -56,7 +58,7 @@ function title1(params: any) {
     </p>
     <div class="flex flex-wrap justify-center">
       <baseInput
-        @modelValue="firstName1"
+         v-model="firstName"
         :regex="/([a-zA-Z]{3,30}\s*)+/"
         success-msg="All is good"
         error-msg="text must be Full name"
