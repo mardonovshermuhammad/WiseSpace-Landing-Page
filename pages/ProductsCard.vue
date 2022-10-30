@@ -29,7 +29,7 @@ const Text = ref<any[]>([
                 <div class="mr-4 ">
                   <BaseIcon class="text-white" :name="user.icon"></BaseIcon>
                 </div>
-                <h1  class="text-[#BBBBBB] mt-2">{{user.name}}</h1>
+                <h1  class="text-[#BBBBBB] font-Mregular font-normal text-[18px] mt-2">{{user.name}}</h1>
             </div>
             </div>
             </div>
@@ -46,7 +46,7 @@ const Text = ref<any[]>([
                   <div class="mr-5">
                   <BaseIcon class="text-white" name="Checked"></BaseIcon>
                 </div>
-                   <h5 class="text-[15px] leading-4 tracking-widest font-extralight mr-7" >{{ item.desc }}</h5>
+                   <h5 class="text-[14px] font-Mregular leading-4 tracking-widest font-normal mr-7" >{{ item.desc }}</h5>
                  </div>
               </div>
             </div>

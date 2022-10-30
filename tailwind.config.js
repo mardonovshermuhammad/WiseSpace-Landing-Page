@@ -36,10 +36,9 @@ module.exports = {
     },
     
     fontFamily:{
-      'Mregular' : ['Montserrat-Regular', 'sans-serif'],
-      'Mmedium' : ['Montserrat-Medium', 'sans-serif'],
-      'Msemibold' : ['Montserrat-SemiBold', 'sans-serif'],
-      'Mbold' : ['Montserrat-SemiBold', 'sans-serif'],
+      'Mregular' : ['https://fonts.googleapis.com/css2?family=Montserrat&display=swap', sans-serif],
+      'Mmedium' : ['https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap', sans-serif],
+      'Mbold' : ['https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap', sans-serif],
     }
 
 

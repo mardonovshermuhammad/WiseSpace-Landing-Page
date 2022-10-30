@@ -52,8 +52,8 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
                         <img src="@/static/img/date.png" >
                         <span class="ml-2 text-[#BDBDBD] text-sm">{{ item.date }}</span>
                         </div>
-                        <p class="mt-4 mb-6 text-[text-lg] text-[#002F5F]">{{ item.title }}</p>
-                        <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F]  group-hover:bg-[#4270F7]"
+                        <p class="mt-4 mb-6 text-[18px] font-Mregular font-medium text-[rgba(0, 47, 95, 0.7)]">{{ item.title }}</p>
+                        <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F] font-Mregular font-meduim  group-hover:bg-[#4270F7]"
                                 > {{ item.BtnName}}</button>
                     </div>
                 </div>

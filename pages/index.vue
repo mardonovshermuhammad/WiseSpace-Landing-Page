@@ -9,7 +9,7 @@
   <Blog/>
   <Testimonials/>
   <Footer/>
-  <MiniFooter/>
+  <MiniFooter></MiniFooter>
  </div>
 </template>
 

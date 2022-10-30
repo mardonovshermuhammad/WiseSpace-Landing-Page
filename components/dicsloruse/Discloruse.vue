@@ -32,10 +32,10 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
     <li v-for="(todo, index) in todos" class="border-b-2 border-black-500"
      :class="{'mt-4': index >= 0, '-active': ( index+1 == itemId)}">
       <div
-        class="py-2 px-6 flex items-center justify-between w-full text-left font-bold text-[#BDBDBD] "
+        class="py-2 px-6 flex items-center justify-between w-full text-left text-[#BDBDBD] "
         @click.prevent="onClick($event, todo.id)">
         <span :class="{'text-[#002F5F]':(index+1 == itemId)}" 
-              class="md:text-lg text-[20px] uppercase font-semibold tracking-wider">{{ todo.title }}</span>
+              class="md:text-[22px] text-[19px] uppercase font-Mmedium font-bold">{{ todo.title }}</span>
         <span class="icon text-[#BDBDBD]" >
           <span class="icon__line colors " :class="{'colors2':(index+1 == itemId)}"></span>
           <span class="icon__line colors" :class="{'colors2':(index+1 == itemId)}"></span>
@@ -51,7 +51,7 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
           <div class="pb-2 px-6">
           <ol class="">
           <li class="text-[15px] text-[#002F5F]" v-for="(item,i) in todo.body" :key="i">
-          <span class=" text-[17px]">&#8226;</span> {{ item}}
+          <span class=" text-[17px] mr-2">&#8226;</span><span class=" font-Mregular font-medium">{{ item }}</span>
           </li>
           </ol> 
           <div class="md:hidden flex">
