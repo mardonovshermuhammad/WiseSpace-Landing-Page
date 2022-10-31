@@ -2,7 +2,7 @@
 import { ref,watch, watchEffect} from "vue";
 import Dropdown from '@/components/Dropdown/Dropdown.vue'
 import BaseIcon from '@/components/BaseComponents/BaseIcons/BaseIcon.vue'
-import country from '@/components/country/country.json'
+import country from '@/components/country/country'
 import botApi from '@/plugin/botApi'
 const emit = defineEmits(['close','send'])
 const FurstName = ref<string>('')
@@ -72,7 +72,7 @@ const Items = ref<any[]>([
      },
      { 
         wer: messages,
-        regex: /([a-zA-Z])+/,
+        regex: /([a-zA-Z]{3,30}\s*)+/,
         successMsg:"All is good",
         errorMsg:"text error",
         label:"School/University name*",
@@ -180,7 +180,9 @@ watch(messages,()=>{
     }
 })
 watchEffect(()=>{
-    if (counNmae2.value !='' && counNmae.value !='' && Items.value[0].validate == true &&  Items.value[1].validate == true && Items.value[2].validate == true &&  Items.value[4].validate == true &&Items.value[5].validate == true) {
+    if (counNmae2.value !='' && counNmae.value !='' && Items.value[0].validate == true &&  
+         Items.value[1].validate == true && Items.value[2].validate == true &&  
+         Items.value[4].validate == true &&Items.value[5].validate == true &&  Items.value[6].validate == true) {
        disabled.value = true
       }
       else{
@@ -189,6 +191,7 @@ watchEffect(()=>{
 })
 async function Submited() {
     try {
+         emit('send')
         await botApi.get("sendMessage", {
             params: {
               chat_id: -897274754,
@@ -235,7 +238,8 @@ function selectValue2(value:any){
         <div v-if="i !== 3 && i+1 !== Items.length"  class="w-full h-full">
             <input  id="firstname" v-model="item.wer" class="input"
               :style="item.val != '' ? (item.validate ? 'border:2px solid green' : 'border:2px solid red') : item.Message = ''"
-               type="text" placeholder=" "/> <BaseIcon  v-if="(i !== 3 && i+1 !== Items.length) && (item.validate)" class="Icons" name="Goodicon"></BaseIcon>
+               type="text" placeholder=" "/>
+                 <BaseIcon  v-if="(i !== 3 && i+1 !== Items.length) && (item.validate)" class="Icons" name="Goodicon"></BaseIcon>
             <label  for="firstname" class="placeholder font-Mregular font-normal text-[12px]">{{item.label}}</label>
            <p  ref="labelEmail" :style="item.validate ? 'color:green' : 'color:red'" class=" toptext sm:text-xs text-[10px] z-50 absolute">{{ item.Message }}</p>
         </div>
@@ -243,7 +247,7 @@ function selectValue2(value:any){
           <Dropdown @selectValue="selectValue" title="Country*" :options="country.Name"></Dropdown>
         </div>  
         <div v-if="i+1==Items.length" class="w-full h-full ">
-          <Dropdown  @selectValue="selectValue2" title="Country*" :options="option"></Dropdown>
+          <Dropdown  @selectValue="selectValue2" title="Organisation type" :options="option"></Dropdown>
         </div>
     </div>
     <textarea v-model="Sms"

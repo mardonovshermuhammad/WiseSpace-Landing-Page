@@ -48,8 +48,8 @@ function closeFunc() {
   width: 500px;
   margin: 0px auto;
   background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   transition: all 2s ease;
 }
 @media(max-width: 640px){

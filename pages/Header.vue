@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { ref } from "vue"
+import BaseButton from '~/components/BaseComponents/buttons/BaseButton.vue';
+import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
+import Modal from '@/components/Modal.vue'
+import parent from "@/components/Dropdown/Parent.vue"
+const modal = ref<boolean>(false)
+function istoggle() {
+  modal.value = true
+}
+</script>
 <template>
   <div class="imgHerader">
     <div class="backround flex items-center justify-center">
@@ -42,17 +53,6 @@
     </Modal>
   </div>
 </template>
-<script setup lang="ts">
-import { ref } from "vue"
-import BaseButton from '~/components/BaseComponents/buttons/BaseButton.vue';
-import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
-import Modal from '@/components/Modal.vue'
-import parent from "@/components/Dropdown/Parent.vue"
-const modal = ref<boolean>(false)
-function istoggle() {
-  modal.value = true
-}
-</script>
 <style scoped>
 .imgHerader {
   background: url("../static/img/headerImg.png");
