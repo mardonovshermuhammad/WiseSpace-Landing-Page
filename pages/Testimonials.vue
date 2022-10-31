@@ -17,25 +17,37 @@ const cards = <Card[]> ([
     img : require('@/static/img/Home-min.png'),
     name : 'Ubaydulla Salokhiddinov',
    whoIs : 'Project manager',
-   comment : 'Since switching to WiseSpace'
+   comment : 'Since switching to WiseSpace, we have increased our use of e-learning by 100%, largely because it is so simple for our teachers, students and administrative staff'
   },
   {
   img : require('@/static/img/Home-min.png'),
-    name : 'Ubaydulla Salokhiddinov',
-   whoIs : 'Project manager',
-   comment : 'Since switching to WiseSpace'
+    name : 'Aziz Gaffarov',
+   whoIs : 'Manager',
+   comment : 'In the end, WiseSpace is quick, simple, flexible, and even if you` re a teacher of one or more, you can manage hundreds of students and dozens of courses with ease.'
   },
   {
   img : require('@/static/img/Home-min.png'),
+    name : 'Andrey Vetrovkin',
+   whoIs : 'Ceo of Google',
+   comment : 'Over the past 15 years, I`ve used a number of learning management systems, but WiseSpace LMS is without a doubt the best I`ve ever used.'
+  },
+  {
+    img : require('@/static/img/Home-min.png'),
     name : 'Ubaydulla Salokhiddinov',
    whoIs : 'Project manager',
-   comment : 'Since switching to WiseSpace'
+   comment : 'Since switching to WiseSpace, we have increased our use of e-learning by 100%, largely because it is so simple for our teachers, students and administrative staff'
   },
   {
   img : require('@/static/img/Home-min.png'),
-    name : 'Ubaydulla Salokhiddinov',
-   whoIs : 'Project manager',
-   comment : 'Since switching to WiseSpace'
+    name : 'Aziz Gaffarov',
+   whoIs : 'Manager',
+   comment : 'In the end, WiseSpace is quick, simple, flexible, and even if you` re a teacher of one or more, you can manage hundreds of students and dozens of courses with ease.'
+  },
+  {
+  img : require('@/static/img/Home-min.png'),
+    name : 'Andrey Vetrovkin',
+   whoIs : 'Ceo of Google',
+   comment : 'Over the past 15 years, I`ve used a number of learning management systems, but WiseSpace LMS is without a doubt the best I`ve ever used.'
   },
 ]
 )
