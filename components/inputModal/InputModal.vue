@@ -3,6 +3,7 @@ import { ref,watch, watchEffect} from "vue";
 import Dropdown from '@/components/Dropdown/Dropdown.vue'
 import BaseIcon from '@/components/BaseComponents/BaseIcons/BaseIcon.vue'
 import country from '@/components/country/country.json'
+import botApi from '@/plugin/botApi'
 const emit = defineEmits(['close','send'])
 const FurstName = ref<string>('')
 const LastName = ref<string>('')
@@ -186,17 +187,14 @@ watchEffect(()=>{
         disabled.value = false
       }
 })
-function Submited() {
-
-    console.log(FurstName.value);
-    console.log(LastName.value)
-    console.log(EmailValue.value);
-    console.log(NumberValue.value);
-    console.log(Jobtitle.value);
-    console.log(messages.value);
-    console.log(counNmae.value);
-    console.log( counNmae2.value);
-    console.log( Sms.value);
+async function Submited() {
+    try {
+        await botApi.get("sendMessage", {
+            params: {
+              chat_id: -897274754,
+              text: `Full name: ${FurstName.value} \nLast name: ${LastName.value} \nEmail: ${EmailValue.value}  \nCountry: ${counNmae.value}  \nPhone number: ${NumberValue.value} \nJob title: ${Jobtitle.value} \nSchool/University name: ${messages.value}  \nOrganisation type: ${messages.value}  \nMessage*: ${Sms.value} `,
+            },
+          });
     LastName.value = ""
     FurstName.value = ""
     EmailValue.value = ""
@@ -208,6 +206,13 @@ function Submited() {
   Items.value.forEach((e)=>{
        e.validate = false
     })
+        
+    } catch (error) {
+     alert(error)    
+    }
+
+
+   
     
 }
 const option = ref<any[]>([

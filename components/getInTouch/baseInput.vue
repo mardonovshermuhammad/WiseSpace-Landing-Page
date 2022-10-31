@@ -153,14 +153,12 @@ async function Submited() {
     try {
         await botApi.get("sendMessage", {
             params: {
-              chat_id: -1001636635139,
-              text: `CustomerName: ${FurstName.value} \nCustomerTel: ${EmailValue.value} \nBosenRamka: ${NumberValue.value} \nAdress: 
-                ${organition.value} \nCost: ${messages.value} `,
+              chat_id: -897274754,
+              text: `Full name: ${FurstName.value} \nEmail: ${EmailValue.value} \nPhone number: ${NumberValue.value} \nOrganisation name: 
+                ${organition.value} \nMessage: ${messages.value} `,
             },
           });
 
-        
-    } catch (error) {
         FurstName.value = ""
         EmailValue.value = ""
         NumberValue.value = ""
@@ -169,6 +167,10 @@ async function Submited() {
         Items.value.forEach((e)=>{
             e.validate = false
         })
+
+        
+    } catch (error) {
+        
     }
     
 }
