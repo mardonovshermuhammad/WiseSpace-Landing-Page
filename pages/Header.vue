@@ -15,7 +15,7 @@
           </h1>
         </div>
         <div class="md:my-3">
-          <p class="text-[20px] text-white font-normal tracking-widest md:w-[40%] w-full ">Learning Management System WiseSpace is a
+          <p class="md:text-[20px] text-[15px] text-white font-normal tracking-widest md:w-[40%] w-full ">Learning Management System WiseSpace is a
             powerful and efficient online platform that adapts to the purpose of
             your educational organization. The system is easy to use, saves valuable time of adminstration staff,
             teachers
@@ -37,7 +37,7 @@
     </div>
     <Modal @close="modal = false" :isOpen="modal">
     <template v-slot:body>
-      <parent></parent>
+      <parent @closes="modal = false"></parent>
     </template>
     </Modal>
   </div>

@@ -13,7 +13,7 @@
     </div>
     <Modal @close="modal = false" :isOpen="modal">
        <template v-slot:body>
-         <parent></parent>
+         <parent @closes="modal = false"></parent>
        </template>
     </Modal>
   </div>

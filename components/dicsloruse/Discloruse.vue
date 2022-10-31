@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PropType, defineEmits } from "vue"
+import { PropType } from "vue"
 import UseDisc from "./compoDisc"
 const emit = defineEmits(['elementId'])
 const props = defineProps({
@@ -32,7 +32,7 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
     <li v-for="(todo, index) in todos" class="border-b-2 border-black-500"
      :class="{'mt-4': index >= 0, '-active': ( index+1 == itemId)}">
       <div
-        class="py-2 px-6 flex items-center justify-between w-full text-left text-[#BDBDBD] "
+        class="py-2 px-6 flex items-center justify-between w-full text-left text-[#BDBDBD] cursor-pointer "
         @click.prevent="onClick($event, todo.id)">
         <span :class="{'text-[#002F5F]':(index+1 == itemId)}" 
               class="md:text-[22px] text-[19px] uppercase font-Mmedium font-bold">{{ todo.title }}</span>

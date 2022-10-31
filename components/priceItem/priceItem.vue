@@ -47,7 +47,8 @@ let hover = ref<boolean>(false)
         </div>
         <div class="flex justify-center">
             <button type="button"
-                class="bg-[#002F5F] text-white border-none outline-none tracking-widest rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center">
+                class="bg-[#002F5F] text-white border-none outline-none tracking-widest 
+                 rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center group-hover:bg-[#4270F7]">
                 Start trail
                 <div class="flex items-center relative ml-3">
                      <div  class=" bottom-[3px] left-[-10px] text-white text-base absolute transition-all duration-800 group-hover:left-[10px]" >

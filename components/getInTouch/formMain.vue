@@ -9,7 +9,7 @@ const items = ref<any[]>([
 ])
 </script>
 <template>
-    <div class="bg-white w-full rounded-xl shadow-xl md:flex md:justify-between p-5">
+    <div class="bg-white w-full rounded-xl shadow-xl md:flex md:justify-around p-5">
         <div class="relative bg-[#002F5F] p-5 text-white rounded-[20px] overflow-hidden  md:w-2/5 w-full z-[1]">
             <div class="z-[10]">
                 <h1 class="md:text-[30px] text-[26px] font-Mmeduim font-normal mb-3">Contact information </h1>

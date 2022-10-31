@@ -45,7 +45,7 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
                     <div class= "flex flex-col items-start justify-center
                             py-5 px-4 sm:w-[352px] w-[300px] group hover:shadow-bxShadow"> 
                         <div class="overflow-hidden rounded-b  rounded-t">
-                        <img  class="group-hover:scale-110 transition-all duration-600"
+                        <img  class="group-hover:scale-110  transition-all duration-1000"
                              :src="require('@/static/img/'+ item.img + '.png')" />
                         </div>
                         <div class=" flex items-center justify-start mt-4">

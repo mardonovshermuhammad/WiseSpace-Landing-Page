@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref,watch, watchEffect} from "vue";
+import botApi from '@/plugin/botApi'
 const FurstName = ref<string>('')
 const EmailValue = ref<string>('')
 const NumberValue = ref<string>('')
@@ -22,7 +23,7 @@ const Items = ref<any[]>([
         wer: EmailValue,
         regex: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         successMsg:"All is good",
-        errorMsg:"text must be email",
+        errorMsg:"text error",
         label:"Email",
         Message: "",
         val: '',
@@ -32,7 +33,7 @@ const Items = ref<any[]>([
         wer: NumberValue,
         regex: /^[+]?998[012345789][0-9]{8}$/,
         successMsg:"All is good",
-        errorMsg:"text must be Uzb Phone",
+        errorMsg:"text error",
         label:"Phone Number",
         Message: "",
         val: '',
@@ -42,7 +43,7 @@ const Items = ref<any[]>([
         wer: organition,
         regex: /([a-zA-Z]{3,80}\s*)+/,
         successMsg:"All is good",
-        errorMsg:"text must be Full name",
+        errorMsg:"text error",
         label:"Organisation name",
         Message: "",
         val: '',
@@ -53,7 +54,7 @@ const Items = ref<any[]>([
         wer: messages,
         regex: /([a-zA-Z])+/,
         successMsg:"All is good",
-        errorMsg:"text must be message",
+        errorMsg:"text error",
         label:"message",
         Message: "",
         val: '',
@@ -61,7 +62,7 @@ const Items = ref<any[]>([
         
      },
 ])
-    watch(FurstName,()=>{
+watch(FurstName,()=>{
      const regex = Items.value[0].regex
        Items.value[0].val = FurstName.value
     if (FurstName.value == "") {
@@ -69,8 +70,7 @@ const Items = ref<any[]>([
     }
     else if (regex.test(FurstName.value)) {
         Items.value[0].validate = true
-        Items.value[0].Message = Items.value[0].successMsg
-    }
+        Items.value[0].Message = ""    }
     else {
         Items.value[0].validate = false
         Items.value[0].Message = Items.value[0].errorMsg
@@ -85,7 +85,7 @@ watch(EmailValue,()=>{
     }
     else if (regex.test(EmailValue.value)) {
         Items.value[1].validate = true
-        Items.value[1].Message = Items.value[1].successMsg
+        Items.value[1].Message = ""
     }
     else {
         Items.value[1].validate = false
@@ -101,7 +101,7 @@ watch(NumberValue,()=>{
     }
     else if (regex.test(NumberValue.value)) {
         Items.value[2].validate = true
-        Items.value[2].Message = Items.value[2].successMsg
+        Items.value[2].Message = ""
     }
     else {
         Items.value[2].validate = false
@@ -117,7 +117,7 @@ watch(organition,()=>{
     }
     else if (regex.test(organition.value)) {
         Items.value[3].validate = true
-        Items.value[3].Message = Items.value[3].successMsg
+        Items.value[3].Message = ""
     }
     else {
         Items.value[3].validate = false
@@ -133,7 +133,7 @@ watch(messages,()=>{
     }
     else if (regex.test(messages.value)) {
         Items.value[4].validate = true
-        Items.value[4].Message = Items.value[4].successMsg
+        Items.value[4].Message = ""
     }
     else {
         Items.value[3].validate = false
@@ -149,17 +149,27 @@ watchEffect(()=>{
         disabled.value = false
       }
 })
-function Submited() {
-    console.log(FurstName.value);
-    console.log(EmailValue.value);
-    console.log(NumberValue.value);
-    console.log(organition.value);
-    console.log(messages.value);
-    FurstName.value = ""
-    EmailValue.value = ""
-    NumberValue.value = ""
-    organition.value = ""
-    messages.value = ""
+async function Submited() {
+    try {
+        await botApi.get("sendMessage", {
+            params: {
+              chat_id: -1001636635139,
+              text: `CustomerName: ${FurstName.value} \nCustomerTel: ${EmailValue.value} \nBosenRamka: ${NumberValue.value} \nAdress: 
+                ${organition.value} \nCost: ${messages.value} `,
+            },
+          });
+
+        
+    } catch (error) {
+        FurstName.value = ""
+        EmailValue.value = ""
+        NumberValue.value = ""
+        organition.value = ""
+        messages.value = ""
+        Items.value.forEach((e)=>{
+            e.validate = false
+        })
+    }
     
 }
 
@@ -172,7 +182,7 @@ function Submited() {
     <div  v-for="(item,i) in Items" :key="i" class="input-container mt-5 mb-5">
         <input ref="email" id="firstname" v-model="item.wer" class="input"
             :style="item.val != '' ? (item.validate ? 'border:2px solid green' : 'border:2px solid red') : item.Message = ''"
-            type="text" placeholder=" "/>
+            type="text" placeholder=" "/> <BaseIcon  v-if="item.validate" class="Icons" name="Goodicon"></BaseIcon>
         <label for="firstname" class="placeholder font-Mregular font-normal text-[15px]">{{item.label}}</label>
         <p ref="labelEmail" :style="item.validate ? 'color:green' : 'color:red'" class="text-xs z-50 absolute">{{ item.Message }}</p>
     </div>
@@ -197,7 +207,7 @@ function Submited() {
     border: 2px solid #ededed;
     box-sizing: border-box;
     color: black;
-    font-size: 18px;
+    font-size: 15px;
     height: 100%;
     outline: 0;
     padding: 4px 20px 0;
@@ -234,5 +244,10 @@ function Submited() {
 
 .input:focus~.placeholder {
     color: black
+}
+.Icons{
+    position: absolute;
+    right: 10px;
+    top: 17px;
 }
 </style>

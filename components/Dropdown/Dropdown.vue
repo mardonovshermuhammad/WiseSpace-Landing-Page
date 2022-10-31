@@ -1,11 +1,7 @@
  
 <script setup lang="ts">
 import {ref} from 'vue'
-
-// interface prop {
-//   title : string
-//   options: object
-// }
+const emit = defineEmits(['selectValue'])
 const PropsDropdown =  defineProps({
   title:{
     type: String,
@@ -17,8 +13,6 @@ const PropsDropdown =  defineProps({
   }
   
 })
-
-
 const active = ref<boolean>(false)
 const tanlangan = ref<string>('')
 let options  = ref<any>([])
@@ -31,6 +25,7 @@ function selected() {
   function clickOption(params:string) {
     tanlangan.value = params 
     active.value = false
+    emit('selectValue',params)
   }
 </script>
 <template>
@@ -45,7 +40,7 @@ function selected() {
             <label for="automobiles">{{option.name}}</label>
           </div>
         </div>
-        <div class="selected" @click="selected">
+        <div class="selected " @click="selected">
           {{tanlangan}}
         </div>
       </div>
@@ -115,6 +110,7 @@ border-radius: 5px;
 
 .select-box .options-container.active {
   max-height: 240px;
+  overflow-y: auto;
   opacity: 1;
 }
 
@@ -154,5 +150,16 @@ border-radius: 5px;
 
 .select-box .option .radio {
   display: none;
+}
+@media(max-width: 640px){
+  .selected {
+  padding: 0px;
+  padding-left: 16px;
+  font-size: 13px;
+
+}
+.selected::after {
+  top: 3px;
+}
 }
 </style>

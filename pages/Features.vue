@@ -46,12 +46,14 @@ function elementId(id:number){
       <Discloruse :todos="data" @elementId="elementId" />
     </div>
     <div class="w-3/5 h-[500px] md:flex hidden">
-      <div v-if="dataId == 1" class=" w-full h-full bg-red-500">
+      <div v-if="dataId == 1" class=" w-full h-full">
        <img class="w-full h-full" src="@/static/img/Assignments.png" alt="">
       </div>
-      <div  v-if="dataId == 2" class=" w-full h-full bg-blue-500">
+      <div  v-if="dataId == 2" class=" w-full h-full">
+        <img class="w-full h-full" src="@/static/img/student.png" alt="">
       </div>
-      <div  v-if="dataId == 3" class=" w-full h-full bg-indigo-500">
+      <div  v-if="dataId == 3" class=" w-full h-full">
+        <img class="w-full h-full" src="@/static/img/admin.png" alt="">
       </div>
     </div>
   </div>
