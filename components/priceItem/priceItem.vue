@@ -25,8 +25,8 @@ let hover = ref<boolean>(false)
 </script>
 <template>
    <div class="w-full flex justify-between md:flex-wrap">
-        <div v-for="(item,i) in items" :key="i" class="bg-[#EDEDED] cursor-pointer  rounded-xl py-[20px] 
-                   px-[30px] w-[285px] mx-3 mt-4 h-[450px] flex justify-between flex-col  transition-all duration-600 group hover:bg-white">
+        <div v-for="(item,i) in items" :key="i" class="bg-[#EDEDED] cursor-pointer  rounded-xl py-[20px] cardHover 
+                   px-[30px] w-[285px] mx-3 mt-4 h-[450px] flex justify-between flex-col ">
         <div>
             <h1 class="text-[#002F5F] font-Mmeduim font-semibold text-[26px] flex items-center">
                 <svg v-if="i+1 == items.length" width="25" class="mr-2" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,10 +48,10 @@ let hover = ref<boolean>(false)
         <div class="flex justify-center">
             <button type="button"
                 class="bg-[#002F5F] text-white border-none outline-none tracking-widest 
-                 rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center group-hover:bg-[#4270F7]">
+                 rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center">
                 Start trail
                 <div class="flex items-center relative ml-3">
-                     <div  class=" bottom-[3px] left-[-10px] text-white text-base absolute transition-all duration-800 group-hover:left-[10px]" >
+                     <div  class=" animatIcon bottom-[2px] left-[-10px] text-white text-base absolute" >
                       <BaseIcon
                                 name="Animaticon"></BaseIcon>
                      </div>
@@ -62,3 +62,13 @@ let hover = ref<boolean>(false)
     </div>
     </div>
 </template>
+<style scoped>
+.cardHover:hover button{
+ background-color: #4270F7 ;
+ transition: 1s;
+}
+.cardHover:hover button .animatIcon{
+ left: 10px;
+ transition: 1s;
+}
+</style>

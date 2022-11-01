@@ -5,15 +5,21 @@ const currentOffset = ref<number>(0);
 const windowSize = ref<number>(3);
 const paginationFactor = ref<number>(372);
 const carouselWidth = ref<number>(3)
+const caruselBtn = ref<boolean>(false)
 onMounted(() => {
   if (window.innerWidth < 1280 ){
     carouselWidth.value = 2
+    windowSize.value = 2
+    caruselBtn.value = true
   }
   if (window.innerWidth < 830 ){
     carouselWidth.value = 1
+    windowSize.value = 1
+    caruselBtn.value = true
   }
   if (window.innerWidth < 640 ){
     paginationFactor.value = 320
+    caruselBtn.value = true
   }
 })
 function atEndOfList() {
@@ -25,11 +31,6 @@ function atEndOfList() {
 function atHeadOfList() {
   return currentOffset.value === 0;
 }
-function mousedown(e:any) {
-  console.log(e.movementX);
-  
-  moveCarousel(1)
-}
 function moveCarousel(direction: number) {
   if (direction === 1 && !atEndOfList()) {
     currentOffset.value -= paginationFactor.value;
@@ -37,5 +38,5 @@ function moveCarousel(direction: number) {
     currentOffset.value += paginationFactor.value;
   }
 }
-return  { moveCarousel,atHeadOfList,currentOffset,atEndOfList,paginationFactor,mousedown,carouselWidth }
+return  { moveCarousel,atHeadOfList,currentOffset,atEndOfList,paginationFactor,carouselWidth,caruselBtn }
 }

@@ -8,19 +8,6 @@ const items = ref<any[]>([
     title:"“ERP and LMS integration” 2 in 1 in your educational institution",BtnName: 'Read full article' },
     { img: "lmss3-min", date: "August 29, 2022", 
     title:"How LMS is Changing the Education System?",BtnName: 'Read full article' },
-    { img: "lms1-min", date: "September 13, 2022", 
-    title:"Bringing down the Digital Gap in Higher Education",BtnName: 'Read full article' },
-    { img: "blok2-min", date: "September 6, 2022", 
-    title:"“ERP and LMS integration” 2 in 1 in your educational institution",BtnName: 'Read full article' },
-    { img: "lmss3-min", date: "August 29, 2022", 
-    title:"How LMS is Changing the Education System?",BtnName: 'Read full article' },
-    { img: "lms1-min", date: "September 13, 2022", 
-    title:"Bringing down the Digital Gap in Higher Education",BtnName: 'Read full article' },
-    { img: "blok2-min", date: "September 6, 2022", 
-    title:"“ERP and LMS integration” 2 in 1 in your educational institution",BtnName: 'Read full article' },
-    { img: "lmss3-min", date: "August 29, 2022", 
-    title:"How LMS is Changing the Education System?",BtnName: 'Read full article' },
-   
 ]);
 </script>
 <template>

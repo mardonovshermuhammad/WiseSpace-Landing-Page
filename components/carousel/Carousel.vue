@@ -21,17 +21,17 @@ const props = defineProps({
     }
     }
 })
-const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mousedown,carouselWidth} = UseCarousel(props)
+const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,carouselWidth,caruselBtn} = UseCarousel(props)
 
 </script>
 <template>
   <div class="w-full sm:h-[500px] h-[400px] flex justify-center">
   <div class=" container">
       <div class="card-carousel-wrapper">
-        <div 
-            class=" cursor-pointer"
+        <div v-if="caruselBtn" :class="{'opacity-50':atHeadOfList()}"
+            class=" cursor-pointer "
             @click="moveCarousel(-1)"
-            :disabled="atHeadOfList">
+            :disabled="atHeadOfList()">
               <BaseIcon name="Left"></BaseIcon>
         </div>
         <div  :style="{ width: (paginationFactor*carouselWidth-20)+'px',  }" class="card-carousel ">
@@ -41,35 +41,49 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
                 :style="{
                 transform: 'translateX' + '(' + currentOffset + 'px' + ')',
                 }">
-                <div @mouseup="mousedown" class="card-carousel--card shadow-lg shadow-black-500 " v-for="item in items">
-                    <div class= "flex flex-col items-start justify-center
-                            py-5 px-4 sm:w-[352px] w-[300px] group hover:shadow-bxShadow"> 
-                        <div class="overflow-hidden rounded-b  rounded-t">
-                        <img  class="group-hover:scale-110  transition-all duration-1000"
+                <div class="card-carousel--card shadow-lg shadow-black-500 " v-for="item in items">
+                    <div class= "flex flex-col items-start justify-center classHover
+                            py-5 px-4 sm:w-[352px] w-[300px] "> 
+                        <div class=" imgted overflow-hidden rounded-b  rounded-t">
+                        <img  class=""
                              :src="require('@/static/img/'+ item.img + '.png')" />
                         </div>
                         <div class=" flex items-center justify-start mt-4">
                         <img src="@/static/img/date.png" >
-                        <span class="ml-2 text-[#BDBDBD] text-sm">{{ item.date }}</span>
+                        <span class="ml-2 text-[#BDBDBD] text-sm">{{ item.date   }}</span>
                         </div>
                         <p class="mt-4 mb-6 text-[18px] font-Mregular font-medium text-[rgba(0, 47, 95, 0.7)]">{{ item.title }}</p>
-                        <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F] font-Mregular font-meduim  group-hover:bg-[#4270F7]"
-                                > {{ item.BtnName}}</button>
+                        <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F] font-Mregular font-meduim"
+                                >{{ item.BtnName}}</button>
                     </div>
                 </div>
             </div>
             </div>
         </div>
-        <div
+        <div v-if="caruselBtn"
+        :class="{'opacity-50':atEndOfList()}"
         class=" cursor-pointer"
         @click="moveCarousel(1)"
-        :disabled="atEndOfList"
+        :disabled="atEndOfList()"
       ><BaseIcon name="Right"></BaseIcon></div>
     </div>
     </div>
   </div>
 </template>
 <style scoped>
+
+.classHover:hover{
+ transition: 2s;
+}
+.classHover:hover .imgted{
+transform: scale(1.03);
+opacity: 0.5;
+ transition: 1s;
+}
+.classHover:hover button {
+  background: #0F6AC7;
+  transition: 1s;
+}
 .card-carousel-wrapper {
   display: flex;
   align-items: center;
@@ -122,7 +136,6 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
 }
 .card-carousel-cards .card-carousel--card {
   margin: 0 10px;
-  cursor: grab;
   box-shadow: 0 4px 15px 0 rgba(40, 44, 53, 0.06),
     0 2px 2px 0 rgba(40, 44, 53, 0.08);
   background-color: #fff;
@@ -142,9 +155,6 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,mou
   border-top-right-radius: 4px;
   transition: opacity 150ms linear;
   user-select: none;
-}
-.card-carousel-cards .card-carousel--card img:hover {
-  opacity: 0.5;
 }
 .card-carousel-cards .card-carousel--card--footer {
   border-top: 0;
