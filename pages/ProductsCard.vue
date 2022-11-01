@@ -4,7 +4,7 @@ import BaseIcon from '@/components/BaseComponents/BaseIcons/BaseIcon.vue'
 const Title = ref<any[]>([
     { icon: "University", name: "University" },
     { icon: "School", name: "School" },
-    { icon: "University", name: "Education center" },
+    { icon: "EducationCenter", name: "Education center" },
    ])
 const Text = ref<any[]>([
     { icon: "icon", desc: "All-in-one integrated platform (LMS, ERP & CRM)" },
@@ -23,21 +23,22 @@ const Text = ref<any[]>([
      <div class="container">
         <div class=" flex flex-col items-center">
             <div class="w-4/5 md:flex md:justify-between">
-            <div class=" md:w-1/3 f-full flex justify-center border-b border-white md:my-0" 
-               v-for="(user,i) in Title" :key="i" :class="{'my-2': i==1}">
-            <div class=" flex items-center cursor-pointer">
-                <div class="mr-4 ">
-                  <BaseIcon class="text-white" :name="user.icon"></BaseIcon>
+            <div  v-for="(user,i) in Title" :key="i" :class="{'my-2': i==1,'border-[#FF6B35]': i==0}"
+             class=" md:w-1/3 f-full flex justify-center border-b  md:my-0" 
+              >
+            <div  class=" flex items-center cursor-pointer">
+                <div class="mr-4">
+                  <BaseIcon :name="user.icon"></BaseIcon>
                 </div>
-                <h1  class="text-[#BBBBBB] font-Mregular font-normal text-[18px] mt-2">{{user.name}}</h1>
+                <h1 :class="{'text-[#FF6B35]': i==0,'text-[#BBBBBB]': i!=0, 'mb-1': i==2}"
+                    class=" font-Mregular font-normal text-[18px] mt-2">{{user.name}}</h1>
             </div>
             </div>
             </div>
-            <div class="w-4/5 my-12 2xl:h-[650px] xl:h-[550px] lg:h-[450px] md:h-[300px] 
-                 h-auto overflow-hidden shadow-black-900 shadow-xl rounded-lg z-0">
+            <div class="w-4/5 my-12 2xl:h-[650px] xl:h-[550px] lg:h-[450px] md:h-[300px] h-auto overflow-hidden shadow-black-900 shadow-xl rounded-lg z-0">
               <div class="w-full h-full z-0 ">
                  <img class=" md:flex hidden  imganimat z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt="">
-                 <img class=" md:hidden flex  z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt=""></img>
+                 <img class=" md:hidden flex  z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt="">
               </div>
             </div>
             <div class="w-4/5 ml-[10%]">
