@@ -12,7 +12,7 @@ function istoggle() {
 <template>
   <div class="imgHerader">
     <div class="backround flex items-center justify-center">
-      <div class="container 2xl:px-20 px-0">
+      <div class="container 2xl:px-20 px-2 ">
         <div class="flex items-center -mt-3">
           <h1 class="text-[#FF6B35] md:text-[40px] text-[19px] mr-5 font-Mmedium  tracking-wider font-bold">WiseSpace<span class="text-white ml-4">for</span></h1>
           <h1 class="header flex text-btnColor font-bold text-4xl tracking-[0.8px]">
