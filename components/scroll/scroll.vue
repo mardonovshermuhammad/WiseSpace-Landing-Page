@@ -39,7 +39,7 @@ function mousemove(e:any) {
         <div class="w-full my-8">
             <div @mousemove="mousemove($event)" @mouseup="mouseup"
                   @mouseleave="mouseleave" @mousedown="mousedown($event)" 
-                    ref="werty" class="items flex justify-around scrollbar-hide py-4">
+                    ref="werty" class="items flex xl:justify-around justify-between scrollbar-hide py-4">
                      <slot name="Slotcard"></slot>
             </div>
          </div>
