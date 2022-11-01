@@ -10,10 +10,12 @@
   <Testimonials/>
   <Footer/>
   <MiniFooter></MiniFooter>
+   <scroll class='absolute bottom-0' />
  </div>
 </template>
 
 <script setup lang="ts">
+import scroll from '../components/ScrollToTop/scroll.vue'
 import Header from './Header.vue'
 import Navbar from './Navbar.vue'
 import  Products from './Products.vue'
