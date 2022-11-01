@@ -19,24 +19,13 @@ const items = ref<any[]>([
 </script>
 <template>
    <div>
-        <div class=" md:flex hidden w-full bg-[#002F5F] pt-[10px] pb-20 px-[20px] justify-center">
+        <div class="  flex justify-center my-8 bg-[#002F5F]">
             <div class="container">
                 <div class="text-center">
-                        <h1 class="md:text-[40px] text-[30px] mt-8 mb-10 font-Mmedium font-bold  text-white uppercase">pricing</h1>
-                    </div>
-                    <div class="px-10">
-                        <PriceItem :items="items" ></PriceItem>
-                    </div>
-            </div>
-        </div>
-        <div class=" md:hidden  flex justify-center my-8 bg-[#002F5F]">
-            <div class="container">
-                <div class="text-center">
-                    <h1 class="text-2xl mt-8 sm:mb-10 mb-[-20px] font-bold  text-white uppercase">pricing</h1>
+                    <h1 class="md:text-[40px] text-[30px] mt-8 sm:mb-10 mb-[-20px] font-bold  text-white uppercase">pricing</h1>
                 </div>
             <scroll :itemsLenght="10">
             <template #Slotcard>
-                
                 <PriceItem :items="items" ></PriceItem>
             </template>
             </scroll>

@@ -1,6 +1,6 @@
 <template>
  <div>
- <div class="fixed w-full z-50"><Navbar/></div>
+ <div class="fixed w-full z-50 shadow-lg shadow-black-300"><Navbar/></div>
   <Header/>
   <Products/>
   <ProductsCard/>

@@ -15,7 +15,7 @@ const menu = ref<any[]>([
      <ul class=" flex justify-between ">
         <li class=" text-[#002F5F] text-[16px] font-medium cursor-pointer duration-300  hover:text-[#FF6B35]"
             v-for="(user,i) in menu" :key="i">
-        {{ user.name }}
+        <a :href="`#${user.name}`"> {{ user.name }}</a>
         </li>
      </ul>
     </div>

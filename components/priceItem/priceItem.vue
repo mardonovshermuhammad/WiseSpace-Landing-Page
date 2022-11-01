@@ -24,7 +24,7 @@ const props = defineProps({
 let hover = ref<boolean>(false)
 </script>
 <template>
-   <div class="w-full flex justify-between md:flex-wrap">
+   <div class="w-full flex justify-between">
         <div v-for="(item,i) in items" :key="i" class="bg-[#EDEDED] cursor-pointer  rounded-xl py-[20px] cardHover 
                    px-[30px] w-[285px] mx-3 mt-4 h-[450px] flex justify-between flex-col ">
         <div>

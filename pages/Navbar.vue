@@ -1,12 +1,12 @@
 <template>
   <div class="w-full h-20 bg-white flex  items-center justify-center">
-    <div class="container lg:mx-20 mx-3 flex justify-between ">
+    <div class="container 2xl:px-20 px-3 flex justify-between ">
       <img width="186" height="38" src="@/static/img/icon.png" alt="">
       <div class=" mt-2 lg:inline hidden w-[50%]">
         <headeerMenu />
       </div>
       <div @click="istoggle"> <BaseButton name="some" rounded="sm" size="sm" color="orange"
-               class="flex items-center font-Mmedium font-normal text-[14px] justify-between gap-2">
+               class="flex items-center font-Mmedium font-normal text-[14px] justify-between md:gap-2">
               <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
             </BaseButton>
       </div>
