@@ -15,7 +15,7 @@ function istoggle() {
       <div class="container 2xl:px-20 px-2 ">
         <div class="flex items-center -mt-3">
           <h1 class="text-[#FF6B35] md:text-[40px] text-[19px] mr-5 font-Mmedium  tracking-wider font-bold">WiseSpace<span class="text-white ml-4">for</span></h1>
-          <h1 class="header mt-2 flex text-btnColor font-bold text-4xl tracking-[0.8px]">
+          <h1 class="header md:mt-2 mt-0 flex text-btnColor font-bold text-4xl tracking-[0.8px]">
             <div class="headerTextSlider">
               <ul class="headerTextSlidersWords font-Mmedium  tracking-wider font-bold">
                 <li class="md:text-4xl text-[19px]">Unversity</li>
@@ -27,7 +27,7 @@ function istoggle() {
           </h1>
         </div>
         <div class="md:my-3">
-          <p class="md:text-[20px] text-[15px] text-white font-normal leading-7 tracking-wider md:w-[40%] w-full ">Learning Management System WiseSpace is a
+          <p class="md:text-[20px] text-[15px] text-white font-normal sm:leading-7 leading-5 tracking-wider md:w-[40%] w-full ">Learning Management System WiseSpace is a
             powerful and efficient online platform that adapts to the purpose of
             your educational organization. The system is easy to use, saves valuable time of adminstration staff,
             teachers
@@ -96,5 +96,29 @@ function istoggle() {
   100% {
     bottom: 3.31em;
   }
+}
+@media(max-width: 768px){
+  .header {
+  height: 0.9em;
+}
+  .headerTextSlider {
+  line-height: 0.8em;
+  animation: slide-vertically infinite 4s 3s ease-in-out;
+}
+@keyframes slide-vertically {
+  0% {
+    bottom: 0;
+  }
+  33.3% {
+    bottom: 0.8em;
+  }
+  66.6% {
+    bottom: 1.6em;
+  }
+  100% {
+    bottom: 2.4em;
+  }
+}
+
 }
 </style>

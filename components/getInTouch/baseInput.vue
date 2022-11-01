@@ -12,7 +12,7 @@ const Items = ref<any[]>([
         wer: FurstName,
         regex: /([a-zA-Z]{3,30}\s*)+/,
         successMsg:"All is good",
-        errorMsg:"text must be Full name",
+        errorMsg:"text error",
         label:"Full name",
         Message: "",
         val: '',
@@ -183,14 +183,18 @@ async function Submited() {
     <form action="" class="w-full" @submit.prevent="Submited">
     <div  v-for="(item,i) in Items" :key="i" class="input-container mt-5 mb-5">
         <input ref="email" id="firstname" v-model="item.wer" class="input"
-            :style="item.val != '' ? (item.validate ? 'border:2px solid green' : 'border:2px solid red') : item.Message = ''"
+            :style="item.val != '' ? (item.validate ? 'border:2px solid #27AE60' : 'border:2px solid red') : item.Message = ''"
             type="text" placeholder=" "/> <BaseIcon  v-if="item.validate" class="Icons" name="Goodicon"></BaseIcon>
-        <label for="firstname" class="placeholder font-Mregular font-normal text-[15px]">{{item.label}}</label>
+        <label for="firstname" class="placeholder font-Mregular font-normal sm:text-[15px] text-[12px]">{{item.label}}</label>
         <p ref="labelEmail" :style="item.validate ? 'color:green' : 'color:red'" class="text-xs z-50 absolute">{{ item.Message }}</p>
     </div>
     <div>
-    <button :disabled="!disabled" :class="{'opacity-50': !disabled}" type="submit" class="bg-[#002F5F] text-white rounded-lg py-[12px] px-[30px] mt-3">Send
-            message</button>
+    <div class="flex md:justify-start justify-center">
+        <button :disabled="!disabled" :class="{'opacity-50': !disabled}" type="submit" 
+                class="bg-[#002F5F] text-white rounded-lg md:py-[12px] 
+                text-[16px] md:px-[30px]  py-[8px] px-[20px]">
+                Send message</button>
+    </div>
     </div>
       </form>
    </div>
@@ -201,7 +205,14 @@ async function Submited() {
     position: relative;
     width: 100%;
 }
-
+.input-container:hover .input{
+    background-color:  #F4F4F4;
+    transition: 0.4s;
+}
+.input-container:hover .placeholder{
+    background-color:  #F4F4F4;
+    transition: 0.4s;
+}
 
 .input {
     background-color: white;
@@ -218,7 +229,8 @@ async function Submited() {
 
 
 .input:focus {
-    border: 2px solid cyan;
+    border: 2px solid #61C6D2;
+    background-color: white;
 }
 
 .placeholder {
@@ -233,6 +245,7 @@ async function Submited() {
     top: 20px;
     padding-left: 5px;
     padding-right: 5px;
+    border-radius: 10px;
 }
 
 .input:focus~.placeholder,
@@ -251,5 +264,27 @@ async function Submited() {
     position: absolute;
     right: 10px;
     top: 17px;
+}
+
+@media(max-width:640px){
+    .input {
+    font-size: 13px;
+}
+.input-container{
+    height: 35px;
+}
+.placeholder {
+    left: 15px;
+    top: 12px;
+}
+.input:focus~.placeholder,
+.input:not(:placeholder-shown)~.placeholder {
+    transform: translateY(-19px) translateX(-5px) scale(0.75);
+}
+.Icons{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
 }
 </style>

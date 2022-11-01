@@ -35,7 +35,7 @@ const Text = ref<any[]>([
             </div>
             </div>
             </div>
-            <div class="w-4/5 my-12 2xl:h-[650px] xl:h-[550px] lg:h-[450px] md:h-[300px] h-auto overflow-hidden shadow-black-900 shadow-xl rounded-lg z-0">
+            <div class="w-4/5 my-8 2xl:h-[650px] xl:h-[550px] lg:h-[450px] md:h-[300px] h-auto overflow-hidden shadow-black-900 shadow-xl rounded-lg z-0">
               <div class="w-full h-full z-0 ">
                  <img class=" md:flex hidden  imganimat z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt="">
                  <img class=" md:hidden flex  z-0" width="2000px" height="2000px" src="@/static/img/Home-min.png" alt="">
@@ -43,7 +43,7 @@ const Text = ref<any[]>([
             </div>
             <div class="w-4/5 ml-[10%]">
               <div class="w-full h-full lg:flex lg:justify-between flex-wrap">
-                 <div class="lg:w-1/3 w-full text-white flex mb-8" v-for="(item,i) in Text" :key="i">
+                 <div class="lg:w-1/3 w-full text-white flex md:mb-8 mb-4" v-for="(item,i) in Text" :key="i">
                   <div class="mr-5">
                   <BaseIcon class="text-white" name="Checked"></BaseIcon>
                 </div>

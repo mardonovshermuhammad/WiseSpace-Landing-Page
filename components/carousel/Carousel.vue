@@ -41,18 +41,18 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
                 :style="{
                 transform: 'translateX' + '(' + currentOffset + 'px' + ')',
                 }">
-                <div class="card-carousel--card shadow-lg shadow-black-500 " v-for="item in items">
+                <div class="card-carousel--card " v-for="item in items">
                     <div class= "flex flex-col items-start justify-center classHover
                             py-5 px-4 sm:w-[352px] w-[300px] "> 
-                        <div class=" imgted overflow-hidden rounded-b  rounded-t">
-                        <img  class=""
+                        <div class="  overflow-hidden rounded-b  rounded-t">
+                        <img  class="imgted"
                              :src="require('@/static/img/'+ item.img + '.png')" />
                         </div>
                         <div class=" flex items-center justify-start mt-4">
                         <img src="@/static/img/date.png" >
                         <span class="ml-2 text-[#BDBDBD] text-sm">{{ item.date   }}</span>
                         </div>
-                        <p class="mt-4 mb-6 text-[18px] font-Mregular font-medium text-[rgba(0, 47, 95, 0.7)]">{{ item.title }}</p>
+                        <p class="mt-4 mb-6 text-[18px] font-Mregular font-medium text-[#002F5F]">{{ item.title }}</p>
                         <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F] font-Mregular font-meduim"
                                 >{{ item.BtnName}}</button>
                     </div>
@@ -71,17 +71,20 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
   </div>
 </template>
 <style scoped>
-
+.card-carousel--card:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.7s;
+}
 .classHover:hover{
  transition: 2s;
 }
 .classHover:hover .imgted{
-transform: scale(1.03);
- transition: 1s;
+transform: scale(1.1);
+ transition: 0.7s;
 }
 .classHover:hover button {
   background: #0F6AC7;
-  transition: 1s;
+  transition: 0.7s;
 }
 .card-carousel-wrapper {
   display: flex;
@@ -135,8 +138,6 @@ transform: scale(1.03);
 }
 .card-carousel-cards .card-carousel--card {
   margin: 0 10px;
-  box-shadow: 0 4px 15px 0 rgba(40, 44, 53, 0.06),
-    0 2px 2px 0 rgba(40, 44, 53, 0.08);
   background-color: #fff;
   border-radius: 4px;
   z-index: 3;

@@ -38,9 +38,9 @@ function elementId(id:number){
 }
 </script>
 <template>
-<div class="py-16 flex justify-center">
+<div id="Features" class="md:pb-20 pb-0 md:pt-20 mt-4  flex justify-center">
   <div class="container  2xl:px-20 px-0">
-    <h1 class="text-center md:text-4xl text-[30px]  font-Mbold font-bold text-[#002F5F] uppercase  mb-10">Features</h1>
+    <h1 class="text-center md:text-4xl text-[30px]  font-Mbold font-bold text-[#002F5F] uppercase  md:mb-10 mb-[-20px]">Features</h1>
     <div class="flex justify-between">
     <div class="md:w-1/3 w-full ">
       <Discloruse :todos="data" @elementId="elementId" />

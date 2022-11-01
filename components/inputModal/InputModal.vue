@@ -234,10 +234,10 @@ function selectValue2(value:any){
 <template>
    <div>
     <form action="" class="w-full sm:flex sm:justify-between sm:flex-wrap" @submit.prevent="Submited">
-    <div  v-for="(item,i) in Items" :key="i"  class="input-container sm:mb-5 mb-3 sm:w-[45%] w-full">
+    <div  v-for="(item,i) in Items" :key="i"  class="input-container sm:mb-5 mb-[13px] sm:w-[45%] w-full">
         <div v-if="i !== 3 && i+1 !== Items.length"  class="w-full h-full">
             <input  id="firstname" v-model="item.wer" class="input"
-              :style="item.val != '' ? (item.validate ? 'border:2px solid green' : 'border:2px solid red') : item.Message = ''"
+              :style="item.val != '' ? (item.validate ? 'border:2px solid #27AE60' : 'border:2px solid red') : item.Message = ''"
                type="text" placeholder=" "/>
                  <BaseIcon  v-if="(i !== 3 && i+1 !== Items.length) && (item.validate)" class="Icons" name="Goodicon"></BaseIcon>
             <label  for="firstname" class="placeholder font-Mregular font-normal text-[12px]">{{item.label}}</label>
@@ -283,10 +283,7 @@ function selectValue2(value:any){
     width: 100%;
 }
 .input:focus {
-    border: 2px solid cyan;
- @media(max-width: 640px){
-    border: 1px solid red;
-}
+    border: 2px solid #61C6D2;
 }
 
 .placeholder {
@@ -325,27 +322,30 @@ function selectValue2(value:any){
     .Icons{
     position: absolute;
     right: 10px;
-    top: 3px;
+    top: 6px;
 }
-    .input {
+.input {
     border-radius: 4px;
+    font-size: 13px;
+    width: 100% !important;
+    border: 1px solid #ededed;
 }
 .input:focus {
-    border: 2px solid cyan;
+    border: 2px solid #61C6D2;
 }
 .input-container {
-    height: 25px;
+    height: 30px;
     position: relative; 
 }
 .placeholder {
-    top: 5px;
+    top: 7px;
     padding-left: 0px;
     padding-right: 0px;
     font-size: 13px;
 }
 .input:focus~.placeholder,
 .input:not(:placeholder-shown)~.placeholder {
-    transform: translateY(-12px) translateX(-5px) scale(0.75);
+    transform: translateY(-14px) translateX(-5px) scale(0.75);
 }
 .toptext{
     bottom: -12px;

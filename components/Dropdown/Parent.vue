@@ -19,11 +19,11 @@ function modalclose() {
 <template>
   <div>
   <div  v-if="!closeModal"
-    class="flex flex-col items-center justify-start p-5 shadow-modalShadow max-w-[520px] w-full m-auto ">
+    class="flex flex-col items-center justify-start sm:p-5 px-5 pb-5 shadow-modalShadow max-w-[520px] w-full m-auto ">
     <h2 class="text-center font-Mmedium font-bold md:text-[30px] text-[26px] sm:mb-2 mb-0" >
       Try <span class="text-[#FF6B35]">WiseSpace</span> now
     </h2>
-    <p class="opacity-40 text-center  text-[15px] font-Mregular font-normal mb-4 text-black">
+    <p class="opacity-40 text-center  sm:text-[15px] leading-4 text-[13px] w-[90%]  font-Mregular font-normal sm:mb-4 mb-2 text-black">
       You will have free consultation before getting trall
     </p>
     <div class="w-full flex flex-wrap justify-center">

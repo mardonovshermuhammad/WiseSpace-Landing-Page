@@ -35,13 +35,13 @@ const cards = <Card[]> ([
 )
 </script>
 <template>
-<div class="flex justify-center mt-16">
+<div id="Clients" class="flex justify-center md:pt-20 pt-20">
   <div class="container">
   <h1 class="text-center text-[rgba(0, 0, 0, 0.87)] tracking-wide text-4xl font-bold font-Mmeduim text-[30px] ">Testimonials</h1>
   <scroll :itemsLenght="10">
   <template #Slotcard>
-    <div v-for="item in cards" class="shadow-lg shadow-black-300 sm:mx-10 mx-4">
-    <div class=" mt-10 flex flex-col items-start justify-center w-[352px] h-[235px]  sm:p-[20px] p-[10px]  rounded-lg shadow-black">
+    <div v-for="item in cards" class="shadowCard sm:mx-10 mx-4">
+    <div class=" flex flex-col items-start justify-center w-[352px] h-[235px]  p-[20px]  rounded-lg shadow-black">
         <div class="flex items-start justify-center">
             <div class="mr-2">
             <img class="w-[48px]  max-h-12 rounded-[50%] h-12" :src="item.img"  alt="">
@@ -60,5 +60,7 @@ const cards = <Card[]> ([
 </div>
 </template>
 <style scoped>
-
+.shadowCard{
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
 </style>

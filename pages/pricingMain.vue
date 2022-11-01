@@ -18,11 +18,11 @@ const items = ref<any[]>([
 ]);
 </script>
 <template>
-   <div>
-        <div class="  flex justify-center my-8 bg-[#002F5F]">
+   <div id="Pricing" class=" md:py-20 py-8 bg-[#002F5F]">
+        <div class="  flex justify-center">
             <div class="container">
                 <div class="text-center">
-                    <h1 class="md:text-[40px] text-[30px] mt-8 sm:mb-10 mb-[-20px] font-bold  text-white uppercase">pricing</h1>
+                    <h1 class="md:text-[40px] text-[30px] font-bold  text-white uppercase">pricing</h1>
                 </div>
             <scroll :itemsLenght="10">
             <template #Slotcard>

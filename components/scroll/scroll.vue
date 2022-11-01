@@ -36,7 +36,7 @@ function mousemove(e:any) {
 <template>
    <div class=" flex justify-center">
     <div class=" container ">
-        <div class="w-full my-8">
+        <div class="w-full md:my-8">
             <div @mousemove="mousemove($event)" @mouseup="mouseup"
                   @mouseleave="mouseleave" @mousedown="mousedown($event)" 
                     ref="werty" class="items flex xl:justify-around justify-between scrollbar-hide py-4">
