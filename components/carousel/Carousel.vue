@@ -29,7 +29,7 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
   <div class=" container">
       <div class="card-carousel-wrapper">
         <div v-if="caruselBtn" :class="{'opacity-50':atHeadOfList()}"
-            class=" cursor-pointer "
+            class=" cursor-pointer mr-2 "
             @click="moveCarousel(-1)"
             :disabled="atHeadOfList()">
               <BaseIcon name="Left"></BaseIcon>
@@ -62,7 +62,7 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
         </div>
         <div v-if="caruselBtn"
         :class="{'opacity-50':atEndOfList()}"
-        class=" cursor-pointer"
+        class=" cursor-pointer ml-2"
         @click="moveCarousel(1)"
         :disabled="atEndOfList()"
       ><BaseIcon name="Right"></BaseIcon></div>
@@ -77,7 +77,6 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
 }
 .classHover:hover .imgted{
 transform: scale(1.03);
-opacity: 0.5;
  transition: 1s;
 }
 .classHover:hover button {
