@@ -38,5 +38,5 @@ function moveCarousel(direction: number) {
     currentOffset.value += paginationFactor.value;
   }
 }
-return  { moveCarousel,atHeadOfList,currentOffset,atEndOfList,paginationFactor,carouselWidth,caruselBtn }
+return  { moveCarousel,atHeadOfList,currentOffset,atEndOfList,carouselWidth,caruselBtn }
 }

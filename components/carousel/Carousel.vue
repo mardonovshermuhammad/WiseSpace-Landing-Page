@@ -21,7 +21,7 @@ const props = defineProps({
     }
     }
 })
-const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,carouselWidth,caruselBtn} = UseCarousel(props)
+const {moveCarousel,atHeadOfList,currentOffset,atEndOfList,carouselWidth,caruselBtn} = UseCarousel(props)
 
 </script>
 <template>
@@ -34,7 +34,7 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
             :disabled="atHeadOfList()">
               <BaseIcon name="Left"></BaseIcon>
         </div>
-        <div  :style="{ width: (paginationFactor*carouselWidth-20)+'px',  }" class="card-carousel ">
+        <div class="card-carousel cardWidth ">
             <div class="card-carousel--overflow-container">
             <div
                 class="card-carousel-cards"
@@ -71,6 +71,24 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList, paginationFactor,car
   </div>
 </template>
 <style scoped>
+.cardWidth{
+    width:100%;
+  }
+@media(max-width:1280px){
+  .cardWidth{
+    width: 740px;
+  }
+}
+@media(max-width:830px){
+  .cardWidth{
+    width: 350px;
+  }
+}
+@media(max-width:640px){
+  .cardWidth{
+    width: 300px;
+  }
+}
 .card-carousel--card:hover{
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     transition: 0.7s;
