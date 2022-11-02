@@ -34,18 +34,18 @@ function mousemove(e:any) {
     if (!isDown.value) return;
 
     lenghts.value =  werty.value.scrollLeft
-    console.log( lenghts.value," lenghts.value");
-    if (lenghts.value < 260) {
+    werty.value.scrollLeft = scrollLefts.value - (e.pageX - startX.value) *2
+}
+function touchend() {
+    if ( werty.value.scrollLeft < 280) {
         scrollPage.value = 0
     }
-    if (lenghts.value > 260) {
+    if ( werty.value.scrollLeft > 280) {
         scrollPage.value = 1
     }
-    if (lenghts.value > 260*2) {
+    if ( werty.value.scrollLeft > 280*2) {
         scrollPage.value = 2
     }
-    
-    werty.value.scrollLeft = scrollLefts.value - (e.pageX - startX.value) *2
     
 }
   
@@ -55,7 +55,7 @@ function mousemove(e:any) {
     <div class=" container ">
         <div class="w-full md:my-8">
             <div @mousemove="mousemove($event)" @mouseup="mouseup"
-                  @mouseleave="mouseleave" @mousedown="mousedown($event)" 
+                  @mouseleave="mouseleave" @touchend="touchend" @mousedown="mousedown($event)" 
                     ref="werty" class="items flex xl:justify-around justify-between scrollbar-hide py-4">
                      <slot name="Slotcard"></slot>
             </div>
