@@ -24,7 +24,7 @@ const items = ref<any[]>([
                 <div class="text-center">
                     <h1 class="md:text-[40px] text-[30px] font-bold  text-white uppercase">pricing</h1>
                 </div>
-            <scroll :itemsLenght="10">
+            <scroll :itemsLenght="4">
             <template #Slotcard>
                 <PriceItem :items="items" ></PriceItem>
             </template>

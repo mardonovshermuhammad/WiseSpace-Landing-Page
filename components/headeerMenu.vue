@@ -5,8 +5,8 @@ const menu = ref<any[]>([
     {name: 'Products', to: '1'},
     {name: 'Features', to: '2'},
     {name: 'Pricing', to: '3'},
-    {name: 'Clients', to: '4'},
-    {name: 'Resources', to: '5'},
+    {name: 'Resources', to: '4'},
+    {name: 'Clients', to: '5'},
     {name: 'Contacts', to: '6'},
     ])
 </script>

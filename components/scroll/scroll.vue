@@ -4,6 +4,10 @@ const props = defineProps({
     itemsLenght:{
         type: Number,
         default: 1,
+    },
+    itemsVisable:{
+        type: Boolean,
+        default: false,
     }
 })
 
@@ -12,6 +16,7 @@ const startX = ref<number>(0);
 const scrollLefts = ref<any>(0);
 const werty  = ref<any>(null)
 const lenghts = ref<number>(0)
+const scrollPage = ref<number>(0)
 
 function mousedown(e:any) {
     isDown.value = true;
@@ -29,9 +34,21 @@ function mousemove(e:any) {
     if (!isDown.value) return;
 
     lenghts.value =  werty.value.scrollLeft
+    console.log( lenghts.value," lenghts.value");
+    if (lenghts.value < 260) {
+        scrollPage.value = 0
+    }
+    if (lenghts.value > 260) {
+        scrollPage.value = 1
+    }
+    if (lenghts.value > 260*2) {
+        scrollPage.value = 2
+    }
+    
     werty.value.scrollLeft = scrollLefts.value - (e.pageX - startX.value) *2
     
 }
+  
 </script>
 <template>
    <div class=" flex justify-center">
@@ -43,6 +60,13 @@ function mousemove(e:any) {
                      <slot name="Slotcard"></slot>
             </div>
          </div>
+        <div v-if="itemsVisable" class="sm:hidden flex mb-8 justify-center">
+        <div class=" flex">
+            <div  v-for="(text,i) in props.itemsLenght" :key="i" class="w-[10px] mr-2 h-[10px] bg-[#D9D9D9] rounded-full">
+               <div class="w-full h-full rounded-full " :class="{'bg-[#002F5F]': i == scrollPage }"></div>
+            </div>
+        </div>
+        </div>
     </div>
    </div>
 </template>
