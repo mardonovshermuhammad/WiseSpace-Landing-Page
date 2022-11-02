@@ -61,8 +61,6 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
                     <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
                 </ul>
             </div>
           </div>
@@ -72,16 +70,12 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
                     <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
                 </ul>
             </div>
           </div>
           <div  v-if="index+1 == 3" class="md:hidden flex">
             <div id="sliderBoard">
                 <ul>
-                    <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
                     <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
@@ -151,7 +145,7 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
 }
 #sliderBoard ul {
     /*ul*/
-    width: 500%;
+    width: 300%;
     height: 100%;
     position: relative;
     animation: slider 30s infinite;
@@ -167,32 +161,20 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
 }
 
 @keyframes slider {
-    0% {
+  0% {
         left: 0px;
     }
-    10% {
-        left: -100%;
-    }
-    20% {
-        left: -100%;
-    }
-    40% {
-        left: -200%;
+    40%{
+      left: 0px;
     }
     50% {
-        left: -200%;
-    }
-    60% {
-        left: -300%;
-    }
-    70% {
-        left: -300%;
-    }
-    80% {
-        left: -400%;
+        left: -100%;
     }
     90% {
-        left: -400%;
-    } /*-1500會變白色*/
+        left: -100%;
+    }
+    100%{
+      left: -200%;
+    }
 }
 </style>

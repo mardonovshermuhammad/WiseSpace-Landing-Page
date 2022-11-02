@@ -14,17 +14,61 @@ function istoggle() {
     <div class="backround flex items-center justify-center">
       <div class="container 2xl:px-20 px-2 ">
         <div class="flex items-center -mt-3">
-          <h1 class="text-[#FF6B35] md:text-[40px] text-[19px] mr-5 font-Mmedium  tracking-wider font-bold">WiseSpace<span class="text-white ml-4">for</span></h1>
-          <h1 class="header md:mt-2 mt-0 flex text-btnColor font-bold text-4xl tracking-[0.8px]">
-            <div class="headerTextSlider">
-              <ul class="headerTextSlidersWords font-Mmedium  tracking-wider font-bold">
-                <li class="md:text-4xl text-[19px]">Unversity</li>
-                <li class="md:text-4xl text-[19px]">Scholl</li>
-                <li class="md:text-4xl text-[19px]">Education center</li>
-                <li class="md:text-4xl text-[19px]">Unversity</li>
-              </ul>
-            </div>
-          </h1>
+          <h1 class="text-[#FF6B35] md:text-[40px] text-[19px] mr-5 font-Mmedium  tracking-wider 
+                       font-bold">WiseSpace<span class="text-white ml-4">for</span></h1>
+
+
+                       <div class="sm:px-12 text-[#F6F6F6]">
+                        <h1 class="box-content h-[1.5em] hidden sm:flex sm:capitalize sm:font-semibold lg:font-extrabold sm:text-[40px]
+                                          md:text-[45px] lg:text-[45px] xl:text-[50px] 2xl:text-[55px] 2xl:ml-4 sm:tracking-wider">
+                          <div class="overflow-hidden text-center">
+                            <span class="h-full mx-[10px] mt-0 mb-[10px] block animate-animation-spin_words text-green2">
+                              University
+                            </span>
+                            <span class="h-full mx-[10px] mt-0 mb-[10px] block animate-animation-spin_words text-green2">
+                              School
+                            </span>
+                            <span class="h-full mx-[10px] mt-0 mb-[10px] block animate-animation-spin_words text-green2">
+                              Education Center
+                            </span>
+                            <span class="h-full mx-[10px] mt-0 mb-[10px] block animate-animation-spin_words text-green2">
+                              University
+                            </span>
+                          </div>
+                        </h1>
+
+                        <!-- {/* Mobile Animation headerLanding  */} -->
+                        <!-- <div class="MobileAnimation sm:hidden">
+                          <div class="wrapMobile flex flex-wrap justify-left items-center pt-2 ml-4">
+                            <h2 class="text-[28px] font-black text-white capitalize leading-[52px] tracking-[1.25px] ">
+                              {t("common:headerContentYour")}
+                            </h2>
+                            <div class="h-[3.2em] overflow-hidden text-center">
+                              <h2 class="h-full mx-[10px] mt-0 mb-[10px] block animate-spin_words_mob text-[28px] capitalize font-black leading-[52px] tracking-[1.25px] text-green2">
+                                {t("common:headerContentBusiness")}
+                              </h2>
+                              <h2 class="h-full mx-[10px] mt-0 mb-[10px] block animate-spin_words_mob text-[28px] capitalize font-black leading-[52px] tracking-[1.25px] text-green2">
+                                {t("common:headerContentSoftware")}
+                              </h2>
+                              <h2 class="h-full mx-[10px] mt-0 mb-[10px] block animate-spin_words_mob text-[28px] capitalize font-black leading-[52px] tracking-[1.25px] text-green2">
+                                {t("common:headerContentDigital")}
+                              </h2>
+                              <h2 class="h-full mx-[10px] mt-0 mb-[10px] block animate-spin_words_mob text-[28px] capitalize font-black leading-[52px] tracking-[1.25px] text-green2">
+                                {t("common:headerContentBusiness")}
+                              </h2>
+                            </div>
+                            <h2 class="text-[28px] capitalize font-black leading-[22px] tracking-[1.25px] ml-0 mr-4 mt-2 text-white">
+                              {t("common:headerSolution")}
+                            </h2>
+                          </div>
+                          <h2 class="text-[21px] text-white font-medium leading-[35px] px-4 tracking-wide mt-6">
+                            {t("common:headerContent")}
+                          </h2>
+                        </div> -->
+                        <!-- {/* Desktop title and button headerLanding  */} -->
+                      </div>
+
+
         </div>
         <div class="md:my-3">
           <p class="md:text-[20px] text-[15px] text-white font-normal sm:leading-7 leading-5 tracking-wider md:w-[40%] w-full ">Learning Management System WiseSpace is a
@@ -70,16 +114,18 @@ function istoggle() {
 }
 .header {
   display: inline-flex;
-  height: 1.1em;
+  height: 1.2em;
   overflow: hidden;
 }
+
 .headerTextSlider {
   line-height: 1.2em;
   position: relative;
   bottom: 0;
-  animation: slide-vertically infinite 4s 3s ease-in-out;
+  animation: slide-vertically infinite 4s 2s ease-in-out;
   color: #fff;
 }
+
 .headerTextSlidersWords {
   list-style: none;
 }
@@ -94,9 +140,11 @@ function istoggle() {
     bottom: 2.4em;
   }
   100% {
-    bottom: 3.31em;
+    bottom: 3.6em;
   }
 }
+
+
 @media(max-width: 768px){
   .header {
   height: 0.9em;

@@ -20,7 +20,7 @@ const items = ref<any[]>([
 <template>
    <div id="Pricing" class=" md:py-20 py-8 bg-[#002F5F]">
         <div class="  flex justify-center">
-            <div class="container">
+            <div class="container  2xl:px-20 px-2">
                 <div class="text-center">
                     <h1 class="md:text-[40px] text-[30px] font-bold  text-white uppercase">pricing</h1>
                 </div>

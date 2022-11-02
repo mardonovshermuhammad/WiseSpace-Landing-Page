@@ -46,38 +46,38 @@ function elementId(id:number){
       <Discloruse :todos="data" @elementId="elementId" />
     </div>
     <div class="w-3/5 h-[500px] md:flex hidden">
-      <div v-if="dataId == 1" class=" w-full h-full">
-        <div id="sliderBoard">
+      <div v-if="dataId == 1" class=" w-full h-[500px]" style="overflow: hidden;">
+        <div class="animatPage">
+          <div id="sliderBoard">
             <ul>
-                <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
             </ul>
         </div>
+        </div>
       </div>
-      <div  v-if="dataId == 2" class=" w-full h-full">
+      <div  v-if="dataId == 2" class=" w-full h-[500px]" style="overflow: hidden;">
+        <div class="animatPage">
         <div id="sliderBoard">
             <ul>
                 <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
             </ul>
         </div>
       </div>
-      <div  v-if="dataId == 3" class=" w-full h-full">
+      </div>
+      <div  v-if="dataId == 3" class=" w-full h-[500px]" style="overflow: hidden;">
+        <div class="animatPage">
         <div id="sliderBoard">
             <ul>
                 <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
             </ul>
         </div>
+       </div>
       </div>
     </div>
   </div>
@@ -95,10 +95,10 @@ function elementId(id:number){
 }
 #sliderBoard ul {
     /*ul*/
-    width: 500%;
+    width: 300%;
     height: 100%;
     position: relative;
-    animation: slider 30s infinite;
+    animation: slider 20s infinite;
     display: flex;
 }
 #sliderBoard li {
@@ -114,31 +114,36 @@ function elementId(id:number){
     0% {
         left: 0px;
     }
-    10% {
-        left: -100%;
-    }
-    20% {
-        left: -100%;
-    }
-    40% {
-        left: -200%;
+    40%{
+      left: 0px;
     }
     50% {
-        left: -200%;
-    }
-    60% {
-        left: -300%;
-    }
-    70% {
-        left: -300%;
-    }
-    80% {
-        left: -400%;
+        left: -100%;
     }
     90% {
-        left: -400%;
-    } /*-1500會變白色*/
+        left: -100%;
+    }
+    100%{
+      left: -200%;
+    }
 }
+
+.animatPage{
+  margin-top: 70%;
+  animation: animatpage 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animatpage{
+  0%{
+    margin-top: 70%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+
+
 
 
 </style>
