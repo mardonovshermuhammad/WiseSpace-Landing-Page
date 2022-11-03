@@ -56,6 +56,10 @@ const Text = ref<any[]>([
     </div>
 </template>
 <style scoped>
+.imganimat:hover{
+  animation-play-state: paused;
+  cursor: pointer;
+}
 .imganimat{
     animation: animat 15s infinite;
 }

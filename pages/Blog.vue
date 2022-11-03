@@ -11,7 +11,7 @@ const items = ref<any[]>([
 ]);
 </script>
 <template>
- <div id="Resources" class="flex justify-center">
+ <div id="Blog" class="flex justify-center">
   <div class="container">
     <div class="w-full sm:pt-16 mt-4">
       <h1 class="text-center text-[rgba(0, 0, 0, 0.87)] sm:mb-8 mb-[-20px] md:text-4xl text-[30px] font-Mmedium font-bold">Blog</h1>

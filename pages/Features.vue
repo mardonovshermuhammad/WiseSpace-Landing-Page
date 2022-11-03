@@ -43,12 +43,15 @@ function elementId(id:number){
     <h1 class="text-center md:text-4xl text-[30px]  font-Mbold font-bold text-[#002F5F] uppercase  md:mb-10 mb-[-20px]">Features</h1>
     <div class="flex justify-between">
     <div class="md:w-1/3 w-full ">
-      <Discloruse :todos="data" @elementId="elementId" />
+      <Discloruse :todos="data" @elementId="elementId"/>
     </div>
-    <div class="w-3/5 h-[500px] md:flex hidden">
-      <div v-if="dataId == 1" class=" w-full h-[500px]" style="overflow: hidden;">
-        <div class="animatPage">
-          <div id="sliderBoard">
+
+   <div class=" w-3/5 h-[500px] pt-2 "  style="overflow: hidden;">
+    <div class="w-full h-[1500px] md:flex h-auto md:flex-col md:justify-between hidden"
+    :class="{'translet1':(dataId==1),'translet2':(dataId==2),'translet3':(dataId==3)}">
+      <div  class=" w-full h-[500px] mb-8" style="overflow: hidden;">
+        <div>
+          <div :class="{'sliderBoard':dataId==1}">
             <ul>
                 <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
@@ -57,9 +60,9 @@ function elementId(id:number){
         </div>
         </div>
       </div>
-      <div  v-if="dataId == 2" class=" w-full h-[500px]" style="overflow: hidden;">
-        <div class="animatPage">
-        <div id="sliderBoard">
+      <div   class=" w-full h-[500px] mb-8" style="overflow: hidden;" >
+        <div>
+        <div :class="{'sliderBoard':dataId==2}">
             <ul>
                 <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
@@ -68,9 +71,9 @@ function elementId(id:number){
         </div>
       </div>
       </div>
-      <div  v-if="dataId == 3" class=" w-full h-[500px]" style="overflow: hidden;">
-        <div class="animatPage">
-        <div id="sliderBoard">
+      <div  class=" w-full h-[500px]" style="overflow: hidden;">
+        <div>
+        <div :class="{'sliderBoard':dataId==3}">
             <ul>
                 <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
                 <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
@@ -80,20 +83,35 @@ function elementId(id:number){
        </div>
       </div>
     </div>
+   </div>
+
   </div>
   </div>
- 
 </div>
 </template>
 <style scoped>
 
-#sliderBoard {
+.translet1{
+  transform: translateY(0px);
+  transition: 1s;
+}
+.translet2{
+  transform: translateY(-515px);
+  transition: 1s;
+}
+.translet3{
+  transform: translateY(-1030px);
+  transition: 1s;
+}
+
+.sliderBoard {
     /*div*/
     width: 100%;
     height: 100%;
     overflow: hidden;
+    
 }
-#sliderBoard ul {
+.sliderBoard ul {
     /*ul*/
     width: 300%;
     height: 100%;
@@ -101,7 +119,7 @@ function elementId(id:number){
     animation: slider 20s infinite;
     display: flex;
 }
-#sliderBoard li {
+.sliderBoard li {
     /*li*/
     width: 100%;
     height: 100% !important;

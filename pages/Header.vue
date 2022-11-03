@@ -66,7 +66,7 @@ function istoggle() {
             learning process.
           </p>
         </div>
-        <div class="md:flex md:mt-0 mt-3 gap-2 items-center">
+        <div class="md:flex md:mt-6 mt-3 gap-2 items-center">
           <div @click="istoggle">
             <BaseButton
               name="some"
