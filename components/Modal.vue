@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {ref, toRefs,watch } from "vue"
 const emit = defineEmits(['close'])
 const props = defineProps({
   isOpen:{

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PropType } from "vue"
 import UseDisc from "./compoDisc"
-const emit = defineEmits(['elementId'])
+const emit = defineEmits(['elementId','modalImgs'])
 const props = defineProps({
     todos:{
     type: Array as PropType<Array<any>>,
@@ -21,8 +21,7 @@ const props = defineProps({
     }
     }
 })
-
-const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
+const {onClick,enter,leave,afterEnter,afterLeave,itemId,imgCard,imgCard2,imgCard3,imgZoom,imgZoom2,imgZoom3 } = UseDisc(props,emit)
 
 </script>
 <template>
@@ -58,27 +57,27 @@ const {onClick,enter,leave,afterEnter,afterLeave,itemId } = UseDisc(props,emit)
             <div  v-if="index+1 == 1" >
               <div id="sliderBoard">
                 <ul>
-                    <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
+                  <li v-for="(item,i) in imgCard" :key="i" @click="imgZoom(i)">
+                  <img class="w-full h-full" 
+                    :src="require('@/static/img/'+ item.img + '.png')" alt=""></li>
                 </ul>
             </div>
           </div>
           <div  v-if="index+1 == 2" class="md:hidden flex">
             <div id="sliderBoard">
                 <ul>
-                    <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
+                  <li v-for="(item,i) in imgCard2" :key="i" @click="imgZoom2(i)">
+                  <img class="w-full h-full" 
+                    :src="require('@/static/img/'+ item.img + '.png')" alt=""></li>
                 </ul>
             </div>
           </div>
           <div  v-if="index+1 == 3" class="md:hidden flex">
             <div id="sliderBoard">
                 <ul>
-                    <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
-                    <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
+                  <li v-for="(item,i) in imgCard3" :key="i" @click="imgZoom3(i)">
+                  <img class="w-full h-full" 
+                    :src="require('@/static/img/'+ item.img + '.png')" alt=""></li>
                 </ul>
             </div>
           </div>

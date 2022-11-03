@@ -30,11 +30,44 @@ const data = ref<any[]>(
         ],
         showBody: false
     }
-    ]
-)
+    ])
+  const imgCard =ref<any[]>([
+      {img: "tech1"},
+      {img: "tech2"},
+      {img: "tech1"},
+    ])
+const imgCard2 =ref<any[]>([
+      {img: "student"},
+      {img: "student2"},
+      {img: "student"},
+    ])
+const imgCard3 =ref<any[]>([
+      {img: "admin"},
+      {img: "admin2"},
+      {img: "admin"},
+    ])
 const dataId = ref<number>(1)
+const modal = ref<boolean>(false)
+const imgModal = ref<string>('')
 function elementId(id:number){
   dataId.value = id
+}
+function modalImgs(event: any) {
+   imgModal.value = event.imgId
+   modal.value = event.modal
+   
+}
+function imgZoom(id:number) {
+  imgModal.value = imgCard.value[id].img
+  modal.value = true
+}
+function imgZoom2(id:number) {
+  imgModal.value = imgCard2.value[id].img
+  modal.value = true
+}
+function imgZoom3(id:number) {
+  imgModal.value = imgCard3.value[id].img
+  modal.value = true
 }
 </script>
 <template>
@@ -43,19 +76,19 @@ function elementId(id:number){
     <h1 class="text-center md:text-4xl text-[30px]  font-Mbold font-bold text-[#002F5F] uppercase  md:mb-10 mb-[-20px]">Features</h1>
     <div class="flex justify-between">
     <div class="md:w-1/3 w-full ">
-      <Discloruse :todos="data" @elementId="elementId"/>
+      <Discloruse :todos="data" @elementId="elementId" @modalImgs="modalImgs"/>
     </div>
 
-   <div class=" w-3/5 h-[500px] pt-2 "  style="overflow: hidden;">
+   <div class=" w-3/5 h-[500px] pt-2 hoverImg md:flex hidden "  style="overflow: hidden;">
     <div class="w-full h-[1500px] md:flex h-auto md:flex-col md:justify-between hidden"
     :class="{'translet1':(dataId==1),'translet2':(dataId==2),'translet3':(dataId==3)}">
       <div  class=" w-full h-[500px] mb-8" style="overflow: hidden;">
         <div>
           <div :class="{'sliderBoard':dataId==1}">
             <ul>
-                <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/tech2.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/tech1.png" alt=""></li>
+                <li v-for="(item,i) in imgCard" :key="i" @click="imgZoom(i)">
+                  <img class="w-full h-full" 
+                    :src="require('@/static/img/'+ item.img + '.png')" alt=""></li>
             </ul>
         </div>
         </div>
@@ -64,32 +97,56 @@ function elementId(id:number){
         <div>
         <div :class="{'sliderBoard':dataId==2}">
             <ul>
-                <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/student2.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/student.png" alt=""></li>
+              <li v-for="(item,i) in imgCard2" :key="i"  @click="imgZoom2(i)" >
+                  <img class="w-full h-full" 
+                    :src="require('@/static/img/'+ item.img + '.png')" alt=""></li>
             </ul>
         </div>
-      </div>
+       </div>
       </div>
       <div  class=" w-full h-[500px]" style="overflow: hidden;">
         <div>
         <div :class="{'sliderBoard':dataId==3}">
             <ul>
-                <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/admin2.png" alt=""></li>
-                <li> <img class="w-full h-full" src="@/static/img/admin.png" alt=""></li>
+              <li v-for="(item,i) in imgCard3" :key="i"  @click="imgZoom3(i)" >
+                  <img class="w-full h-full" 
+                    :src="require('@/static/img/'+ item.img + '.png')" alt=""></li>
             </ul>
         </div>
        </div>
       </div>
     </div>
    </div>
-
   </div>
   </div>
+    <div v-if="modal" :class="{'animationZoom': modal}" class=" md:px-0 px-4 fixed z-50 flex justify-center items-center">
+    <img @click="modal = false" class="w-8 h-8 absolute md:top-8 md:right-12 top-4 right-4" src="@/static/img/close.png" alt="">
+      <img class="w-auto md:h-[70%] h-auto" 
+                    :src="require('@/static/img/'+ imgModal + '.png')" alt="">
+     </div>
 </div>
 </template>
 <style scoped>
+.animationZoom{
+ animation: animarzoom 0.7s forwards;
+}
+@keyframes animarzoom{
+  0%{
+    top: 45%;
+    left: 45%;
+    width: 0px;
+    height: 0px;
+    z-index: 200;
+  }
+  100%{
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 110%;
+    z-index: 200;
+    top: 0px;
+    left: 0px;
+  }
+}
 
 .translet1{
   transform: translateY(0px);
@@ -127,7 +184,10 @@ function elementId(id:number){
     text-align: center;
     float: left;
 }
-
+.hoverImg:hover .sliderBoard ul{
+  animation-play-state: paused;
+  cursor: pointer;
+}
 @keyframes slider {
     0% {
         left: 0px;
