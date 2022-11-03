@@ -2,8 +2,8 @@
  <div>
  <div class="fixed w-full z-50 shadow-lg shadow-black-300"><Navbar/></div>
   <Header/>
-  <Products/>
-  <ProductsCard/>
+  <div class="mt-[-3px]"><Products/></div>
+  <div class="mt-[-5px]"><ProductsCard/></div>
   <features/>
   <pricingMain/>
   <Blog/>
