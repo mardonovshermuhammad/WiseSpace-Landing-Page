@@ -4,7 +4,7 @@ import baseInput from './baseInput.vue';
 import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
 const items = ref<any[]>([
   {icon: 'Phone', name: '+998 88 188 90 00'},
-  {icon: 'Email', name: 'ssolitionuz@gmail.com'},
+  {icon: 'Email', name: 'ssolutionuz@gmail.com'},
   {icon: 'Map', name: 'Tashkent, Uzbekistan'},
 ])
 </script>

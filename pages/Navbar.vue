@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:h-20 h-12 bg-white flex  items-center justify-center">
+  <div class="w-full md:h-20 h-[56px] bg-white flex  items-center justify-center">
     <div class="container 2xl:px-20 px-4 flex justify-between ">
       <img width="186" height="38" src="@/static/img/icon.png" alt="">
       <div class=" mt-2 lg:inline hidden w-[50%]">

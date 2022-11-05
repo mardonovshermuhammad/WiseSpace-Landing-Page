@@ -8,6 +8,6 @@ import scroll from '@/components/ScrollToTop/scroll.vue'
   <h1 class="text-[#002F5F] text-center sm:text-[40px] text-[30px] uppercase font-Mmeduim font-bold md:mb-8 mb-2">Get in touch</h1>
   <formMain></formMain>
   </div>
-  <scroll class=' absolute sm:bottom-[-70px] bottom-[-50px] right-[20px] z-50' />
+  <scroll class=' absolute sm:bottom-[-70px] bottom-[-50px] right-[20px] z-20' />
 </div>
 </template>

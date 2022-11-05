@@ -156,11 +156,11 @@ border-radius: 5px;
   padding: 0px;
   padding-left: 16px;
   font-size: 12px;
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 .selected::after {
-  top: 3px;
+  top: 9px;
 }
 }
 </style>

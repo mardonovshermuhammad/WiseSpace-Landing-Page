@@ -323,7 +323,7 @@ function selectValue2(value:any){
     .Icons{
     position: absolute;
     right: 10px;
-    top: 6px;
+    top: 12px;
 }
 .input {
     border-radius: 4px;
@@ -335,18 +335,19 @@ function selectValue2(value:any){
     border: 2px solid #61C6D2;
 }
 .input-container {
-    height: 30px;
+    width: 270px;
+    height: 35px;
     position: relative; 
 }
 .placeholder {
-    top: 7px;
+    top: 12px;
     padding-left: 0px;
     padding-right: 0px;
     font-size: 13px;
 }
 .input:focus~.placeholder,
 .input:not(:placeholder-shown)~.placeholder {
-    transform: translateY(-14px) translateX(-5px) scale(0.75);
+    transform: translateY(-18px) translateX(-5px) scale(0.75);
 }
 .toptext{
     bottom: -12px;
