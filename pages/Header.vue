@@ -33,7 +33,7 @@ function istoggle() {
             </h1>
             <div class="sm:hidden">
                 <div class="wrapMobile flex flex-wrap justify-left items-center pt-2">
-                  <div class="h-[3.2em] overflow-hidden">
+                  <div class="h-[3.2em] overflow-hidden mt-[-10px]">
                     <h2 class="h-full mt-0 mb-[10px] block animationWord2 text-[19px] 
                          capitalize font-bold font-Mmedium leading-[52px] tracking-[1.25px]">
                       University
@@ -55,7 +55,7 @@ function istoggle() {
           </div>
         </div>
         </div>
-        <div class="md:my-3">
+        <div class="md:my-3 mt-[-10px]">
           <p
             class="md:text-[20px] text-[15px] text-white font-normal sm:leading-7 leading-5 tracking-wider md:w-[40%] w-full"
           >

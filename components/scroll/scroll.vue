@@ -8,6 +8,14 @@ const props = defineProps({
     itemsVisable:{
         type: Boolean,
         default: false,
+    },
+    ItemsWidth:{
+        type: Number,
+        default: 280,
+    },
+    ItembgColor:{
+       type: String,
+        default: '#002F5F',
     }
 })
 
@@ -37,13 +45,13 @@ function mousemove(e:any) {
     werty.value.scrollLeft = scrollLefts.value - (e.pageX - startX.value) *2
 }
 function touchend() {
-    if ( werty.value.scrollLeft < 280) {
+    if ( werty.value.scrollLeft < props.ItemsWidth) {
         scrollPage.value = 0
     }
-    if ( werty.value.scrollLeft > 280) {
+    if ( werty.value.scrollLeft > props.ItemsWidth) {
         scrollPage.value = 1
     }
-    if ( werty.value.scrollLeft > 280*2) {
+    if ( werty.value.scrollLeft > props.ItemsWidth*2) {
         scrollPage.value = 2
     }
     
@@ -63,7 +71,7 @@ function touchend() {
         <div v-if="itemsVisable" class="sm:hidden flex mb-8 justify-center">
         <div class=" flex">
             <div  v-for="(text,i) in props.itemsLenght" :key="i" class="w-[10px] mr-2 h-[10px] bg-[#D9D9D9] rounded-full">
-               <div class="w-full h-full rounded-full " :class="{'bg-[#002F5F]': i == scrollPage }"></div>
+               <div v-show="i == scrollPage" class="w-full h-full rounded-full " :class="[`bg-[${ItembgColor}]`]"></div>
             </div>
         </div>
         </div>

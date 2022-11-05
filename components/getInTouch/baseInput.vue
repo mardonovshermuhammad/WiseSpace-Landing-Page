@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import { ref,watch, watchEffect} from "vue";
+import Dropdown from '@/components/Dropdown/Dropdown.vue'
+import BaseIcon from '@/components/BaseComponents/BaseIcons/BaseIcon.vue'
+import country from '@/components/country/country'
 import botApi from '@/plugin/botApi'
+const emit = defineEmits(['close','send'])
 const FurstName = ref<string>('')
+const LastName = ref<string>('')
 const EmailValue = ref<string>('')
 const NumberValue = ref<string>('')
-const organition = ref<string>('')
+const Jobtitle = ref<string>('')
 const messages = ref<string>('')
+const Sms = ref<string>('')
+const counNmae = ref<string>('')
+const counNmae2 = ref<string>('')
 const disabled = ref<boolean>(false)
 const Items = ref<any[]>([
     { 
@@ -13,7 +21,18 @@ const Items = ref<any[]>([
         regex: /([a-zA-Z]{3,30}\s*)+/,
         successMsg:"All is good",
         errorMsg:"text error",
-        label:"Full name",
+        label:"First name*",
+        Message: "",
+        val: '',
+        validate: false
+        
+     },
+     { 
+        wer: LastName,
+        regex: /([a-zA-Z]{3,30}\s*)+/,
+        successMsg:"All is good",
+        errorMsg:"text error",
+        label:"Last name*",
         Message: "",
         val: '',
         validate: false
@@ -24,27 +43,28 @@ const Items = ref<any[]>([
         regex: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         successMsg:"All is good",
         errorMsg:"text error",
-        label:"Email",
+        label:"Work email adress*",
         Message: "",
         val: '',
         validate: false
     },
+    {},
     {   
         wer: NumberValue,
         regex: /^[+]?998[012345789][0-9]{8}$/,
         successMsg:"All is good",
         errorMsg:"text error",
-        label:"Phone Number",
+        label:"Phone number*",
         Message: "",
         val: '',
         validate: false
     },
     { 
-        wer: organition,
+        wer: Jobtitle,
         regex: /([a-zA-Z]{3,80}\s*)+/,
         successMsg:"All is good",
         errorMsg:"text error",
-        label:"Organisation name",
+        label:"Job title*",
         Message: "",
         val: '',
         validate: false
@@ -52,15 +72,16 @@ const Items = ref<any[]>([
      },
      { 
         wer: messages,
-        regex: /([a-zA-Z])+/,
+        regex: /([a-zA-Z]{3,30}\s*)+/,
         successMsg:"All is good",
         errorMsg:"text error",
-        label:"message",
+        label:"School/University name*",
         Message: "",
         val: '',
         validate: false
         
      },
+     {}
 ])
 watch(FurstName,()=>{
      const regex = Items.value[0].regex
@@ -70,20 +91,21 @@ watch(FurstName,()=>{
     }
     else if (regex.test(FurstName.value)) {
         Items.value[0].validate = true
-        Items.value[0].Message = ""    }
+        Items.value[0].Message = ""
+    }
     else {
         Items.value[0].validate = false
         Items.value[0].Message = Items.value[0].errorMsg
 
     }
 })
-watch(EmailValue,()=>{
+watch(LastName,()=>{
      const regex = Items.value[1].regex
-       Items.value[1].val = EmailValue.value
-    if (EmailValue.value == "") {
+       Items.value[1].val = LastName.value
+    if (LastName.value == "") {
         Items.value[1].Message = 'this field reqired'
     }
-    else if (regex.test(EmailValue.value)) {
+    else if (regex.test(LastName.value)) {
         Items.value[1].validate = true
         Items.value[1].Message = ""
     }
@@ -93,13 +115,13 @@ watch(EmailValue,()=>{
 
     }
 })
-watch(NumberValue,()=>{
+watch(EmailValue,()=>{
      const regex = Items.value[2].regex
-       Items.value[2].val = NumberValue.value
-    if (NumberValue.value == "") {
+       Items.value[2].val = EmailValue.value
+    if (EmailValue.value == "") {
         Items.value[2].Message = 'this field reqired'
     }
-    else if (regex.test(NumberValue.value)) {
+    else if (regex.test(EmailValue.value)) {
         Items.value[2].validate = true
         Items.value[2].Message = ""
     }
@@ -109,40 +131,58 @@ watch(NumberValue,()=>{
 
     }
 })
-watch(organition,()=>{
-     const regex = Items.value[3].regex
-       Items.value[3].val = organition.value
-    if (organition.value == "") {
-        Items.value[3].Message = 'this field reqired'
-    }
-    else if (regex.test(organition.value)) {
-        Items.value[3].validate = true
-        Items.value[3].Message = ""
-    }
-    else {
-        Items.value[3].validate = false
-        Items.value[3].Message = Items.value[3].errorMsg
-
-    }
-})
-watch(messages,()=>{
+watch(NumberValue,()=>{
      const regex = Items.value[4].regex
-       Items.value[4].val = messages.value
-    if (messages.value == "") {
+       Items.value[4].val = NumberValue.value
+    if (NumberValue.value == "") {
         Items.value[4].Message = 'this field reqired'
     }
-    else if (regex.test(messages.value)) {
+    else if (regex.test(NumberValue.value)) {
         Items.value[4].validate = true
         Items.value[4].Message = ""
     }
     else {
-        Items.value[3].validate = false
-        Items.value[3].Message = Items.value[3].errorMsg
+        Items.value[4].validate = false
+        Items.value[4].Message = Items.value[4].errorMsg
+
+    }
+})
+watch(Jobtitle,()=>{
+     const regex = Items.value[5].regex
+       Items.value[5].val = Jobtitle.value
+    if (Jobtitle.value == "") {
+        Items.value[5].Message = 'this field reqired'
+    }
+    else if (regex.test(Jobtitle.value)) {
+        Items.value[5].validate = true
+        Items.value[5].Message = ""
+    }
+    else {
+        Items.value[5].validate = false
+        Items.value[5].Message = Items.value[5].errorMsg
+
+    }
+})
+watch(messages,()=>{
+     const regex = Items.value[6].regex
+       Items.value[6].val = messages.value
+    if (messages.value == "") {
+        Items.value[6].Message = 'this field reqired'
+    }
+    else if (regex.test(messages.value)) {
+        Items.value[6].validate = true
+        Items.value[6].Message = ""
+    }
+    else {
+        Items.value[6].validate = false
+        Items.value[6].Message = Items.value[6].errorMsg
 
     }
 })
 watchEffect(()=>{
-    if (Items.value[0].validate == true && Items.value[1].validate == true && Items.value[2].validate == true && Items.value[3].validate == true && Items.value[4].validate == true) {
+    if (counNmae2.value !='' && counNmae.value !='' && Items.value[0].validate == true &&  
+         Items.value[1].validate == true && Items.value[2].validate == true &&  
+         Items.value[4].validate == true &&Items.value[5].validate == true &&  Items.value[6].validate == true) {
        disabled.value = true
       }
       else{
@@ -151,50 +191,73 @@ watchEffect(()=>{
 })
 async function Submited() {
     try {
+         emit('send')
         await botApi.get("sendMessage", {
             params: {
               chat_id: -897274754,
-              text: `Full name: ${FurstName.value} \nEmail: ${EmailValue.value} \nPhone number: ${NumberValue.value} \nOrganisation name: 
-                ${organition.value} \nMessage: ${messages.value} `,
+              text: `Full name: ${FurstName.value} \nLast name: ${LastName.value} \nEmail: ${EmailValue.value}  \nCountry: ${counNmae.value}  \nPhone number: ${NumberValue.value} \nJob title: ${Jobtitle.value} \nSchool/University name: ${messages.value}  \nOrganisation type: ${messages.value}  \nMessage*: ${Sms.value} `,
             },
           });
-
-        FurstName.value = ""
-        EmailValue.value = ""
-        NumberValue.value = ""
-        organition.value = ""
-        messages.value = ""
-        Items.value.forEach((e)=>{
-            e.validate = false
-        })
-
+    LastName.value = ""
+    FurstName.value = ""
+    EmailValue.value = ""
+    NumberValue.value = ""
+    Jobtitle.value = ""
+     counNmae2.value = ""
+     messages.value = ""
+     Sms.value = ""
+  Items.value.forEach((e)=>{
+       e.validate = false
+    })
         
     } catch (error) {
-        
+     alert(error)    
     }
+
+
+   
     
 }
-
-
+const option = ref<any[]>([
+  { name:'University' },
+  { name:'College' },
+  { name:'School' },
+  { name:'Education center' },
+  { name:'Kindergarten' }
+])
+function selectValue(value:any){
+    counNmae.value = value
+}
+function selectValue2(value:any){
+    counNmae2.value = value
+}
 
 </script>
 <template>
    <div>
-    <form action="" class="w-full" @submit.prevent="Submited">
-    <div  v-for="(item,i) in Items" :key="i" class="input-container mt-5 mb-5">
-        <input ref="email" id="firstname" v-model="item.wer" class="input"
-            :style="item.val != '' ? (item.validate ? 'border:2px solid #27AE60' : 'border:2px solid red') : item.Message = ''"
-            type="text" placeholder=" "/> <BaseIcon  v-if="item.validate" class="Icons" name="Goodicon"></BaseIcon>
-        <label for="firstname" class="placeholder font-Mregular font-normal sm:text-[15px] text-[12px]">{{item.label}}</label>
-        <p ref="labelEmail" :style="item.validate ? 'color:green' : 'color:red'" class="text-xs z-50 absolute">{{ item.Message }}</p>
+    <form action="" class="w-full md:flex md:justify-between md:flex-wrap" @submit.prevent="Submited">
+    <div  v-for="(item,i) in Items" :key="i"  class="input-container md:mb-5 mb-[13px] md:w-[45%] w-full">
+        <div v-if="i !== 3 && i+1 !== Items.length"  class="w-full h-full">
+            <input  id="firstname" v-model="item.wer" class="input"
+              :style="item.val != '' ? (item.validate ? 'border:2px solid #27AE60' : 'border:2px solid red') : item.Message = ''"
+               type="text" placeholder=" "/>
+                 <BaseIcon  v-if="(i !== 3 && i+1 !== Items.length) && (item.validate)" class="Icons" name="Goodicon"></BaseIcon>
+            <label  for="firstname" class="placeholder font-Mregular font-normal text-[12px]">{{item.label}}</label>
+           <p  ref="labelEmail" :style="item.validate ? 'color:green' : 'color:red'" class=" toptext md:text-xs text-[10px] z-50 absolute">{{ item.Message }}</p>
+        </div>
+        <div v-if="i==3" class="w-full md:h-full h-[10px]">
+          <Dropdown @selectValue="selectValue" title="Country*" :options="country.Name"></Dropdown>
+        </div>  
+        <div v-if="i+1==Items.length" class="w-full h-full ">
+          <Dropdown  @selectValue="selectValue2" title="Organisation type" :options="option"></Dropdown>
+        </div>
     </div>
-    <div>
-    <div class="flex md:justify-start justify-center">
-        <button :disabled="!disabled" :class="{'opacity-50': !disabled}" type="submit" 
-                class="bg-[#002F5F] text-white rounded-lg md:py-[12px] 
-                text-[16px] md:px-[30px]  py-[8px] px-[20px]">
-                Send message</button>
-    </div>
+    <textarea v-model="Sms"
+      class="w-full md:mb-7 mb-0 px-6 md:h-[120px] h-[60px] md:text-[15px] text-[12px] md:py-[11px] py-[0px] border border-[#E3E3E3] rounded outline-none"
+    ></textarea>
+    <div class=" w-full mt-5">
+      <button :disabled="!disabled" :class="{'opacity-50':!disabled}" 
+      class="py-2 text-[14px] font-Mregular font-normal px-6 text-white rounded-md bg-[#002F5F]">Send message</button>
     </div>
       </form>
    </div>
@@ -202,17 +265,9 @@ async function Submited() {
 <style scoped>
 .input-container {
     height: 50px;
-    position: relative;
-    width: 100%;
+    position: relative; 
 }
-.input-container:hover .input{
-    background-color:  #F4F4F4;
-    transition: 0.4s;
-}
-.input-container:hover .placeholder{
-    background-color:  #F4F4F4;
-    transition: 0.4s;
-}
+
 
 .input {
     background-color: white;
@@ -226,11 +281,8 @@ async function Submited() {
     padding: 4px 20px 0;
     width: 100%;
 }
-
-
 .input:focus {
     border: 2px solid #61C6D2;
-    background-color: white;
 }
 
 .placeholder {
@@ -243,9 +295,9 @@ async function Submited() {
     transform-origin: 0 50%;
     transition: transform 200ms, color 200ms;
     top: 20px;
+    font-size: 15px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 10px;
 }
 
 .input:focus~.placeholder,
@@ -265,26 +317,37 @@ async function Submited() {
     right: 10px;
     top: 17px;
 }
-
-@media(max-width:640px){
-    .input {
-    font-size: 13px;
+@media only screen and (max-width: 640px) {
+    .Icons{
+    position: absolute;
+    right: 10px;
+    top: 6px;
 }
-.input-container{
-    height: 35px;
+.input {
+    border-radius: 4px;
+    font-size: 13px;
+    width: 100% !important;
+    border: 1px solid #ededed;
+}
+.input:focus {
+    border: 2px solid #61C6D2;
+}
+.input-container {
+    height: 30px;
+    position: relative; 
 }
 .placeholder {
-    left: 15px;
-    top: 12px;
+    top: 7px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 13px;
 }
 .input:focus~.placeholder,
 .input:not(:placeholder-shown)~.placeholder {
-    transform: translateY(-19px) translateX(-5px) scale(0.75);
+    transform: translateY(-14px) translateX(-5px) scale(0.75);
 }
-.Icons{
-    position: absolute;
-    right: 10px;
-    top: 8px;
+.toptext{
+    bottom: -12px;
 }
 }
 </style>

@@ -219,9 +219,11 @@ async function Submited() {
     
 }
 const option = ref<any[]>([
-  { name:'lorem_1' },
-  { name:'lorem_2' },
-  { name:'lorem_3' }
+    { name:'University' },
+    { name:'College' },
+    { name:'School' },
+    { name:'Education center' },
+    { name:'Kindergarten' }
 ])
 function selectValue(value:any){
     counNmae.value = value
@@ -229,7 +231,6 @@ function selectValue(value:any){
 function selectValue2(value:any){
     counNmae2.value = value
 }
-
 </script>
 <template>
    <div>

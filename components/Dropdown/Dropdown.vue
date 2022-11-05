@@ -155,8 +155,9 @@ border-radius: 5px;
   .selected {
   padding: 0px;
   padding-left: 16px;
-  font-size: 14px;
-
+  font-size: 12px;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
 }
 .selected::after {
   top: 3px;

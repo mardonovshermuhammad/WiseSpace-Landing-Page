@@ -25,7 +25,7 @@ const items = ref<any[]>([
                 <img src="./Rectangle 1533.png" class="right-0 bottom-0 absolute z-[2]" alt="">
             </div>
         </div>
-        <div class="md:w-2/5 w-full"  >
+        <div class="md:w-2/5 w-full md:mt-0 mt-4">
                 <baseInput></baseInput>   
         </div>
     </div>

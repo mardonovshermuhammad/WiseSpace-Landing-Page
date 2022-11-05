@@ -4,16 +4,18 @@ import scroll from '@/components/scroll/scroll.vue'
 import { ref } from "vue"
 const items = ref<any[]>([
   { name: "Free", sum: 0, 
-     select:[
-        'Secure your account'] },
-    { name: "Basic", sum: 19, 
-   select:[ 'Secure your account','Up 2 credit cards'] },
-    { name: "Plus", sum: 69, 
-   select: [
-    'Secure your account','Up 2 credit cards','Customer support'] },
+     select:['Course management','Define roles and permissions','Entrance attendance tracking','Creating notifications and announcements',
+              'Branch management','Mobile application']
+     },
+    { name: "Basic", sum: 59, 
+   select:[ 'Features of Free version','External apps integration','Request management','Email Communication',
+            'Video conferencing','Statistics and reporting']
+   },
     { name: "Premium", sum: 99, 
-   select:[
-    'Secure your account','Up 2 credit cards','Customer support','Virtual credits','Personal fin export']},
+   select:['Features of Basic version','Self-customization','Gamification','Statistics with AI implementation',
+            'Advanced attendance tracking','Security through two-way verification','Human Resource Management',
+             'Accounting system']
+},
    
 ]);
 </script>
@@ -24,7 +26,7 @@ const items = ref<any[]>([
                 <div class="text-center">
                     <h1 class="md:text-[40px] text-[30px] font-bold  text-white uppercase">pricing</h1>
                 </div>
-            <scroll :itemsLenght="4">
+            <scroll ItembgColor="#4270F7" :ItemsWidth="250" :itemsVisable="true" :itemsLenght="3">
             <template #Slotcard>
                 <PriceItem :items="items" ></PriceItem>
             </template>

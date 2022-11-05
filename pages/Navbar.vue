@@ -5,9 +5,10 @@
       <div class=" mt-2 lg:inline hidden w-[50%]">
         <headeerMenu />
       </div>
-      <div @click="istoggle"> <BaseButton name="some" rounded="sm" size="sm" color="orange"
-               class="flex items-center font-Mmedium font-normal text-[14px] justify-between md:gap-2">
-              <BaseIcon name="Download"></BaseIcon><span class="md:flex hidden">Get 30-day</span> Free Trail
+      <div class="md:mt-0 mt-1" @click="istoggle"> 
+              <BaseButton name="some" rounded="sm" size="sm" color="orange"
+                class="flex items-center font-Mmedium font-normal text-[14px] justify-between md:gap-2">
+               <BaseIcon class="mr-1" name="Download"></BaseIcon><span class="md:flex hidden "> Get 30-day</span> Free Trail
             </BaseButton>
       </div>
     </div>
