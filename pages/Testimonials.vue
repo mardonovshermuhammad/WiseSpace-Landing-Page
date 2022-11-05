@@ -32,7 +32,7 @@ const cards = <Card[]> ([
 <div id="Clients" class="flex justify-center md:pt-20 pt-20">
   <div class="container">
   <h1 class="text-center text-[rgba(0, 0, 0, 0.87)] tracking-wide text-4xl font-bold font-Mmeduim text-[30px] ">Testimonials</h1>
-  <scroll :itemsLenght="3" :itemsVisable="true">
+  <scroll ItembgColor="bg-[#002F5F]" :itemsLenght="3" :itemsVisable="true">
   <template #Slotcard>
     <div>
       <div class=" f-full flex justify-between">

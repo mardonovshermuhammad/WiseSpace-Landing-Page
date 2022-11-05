@@ -15,7 +15,7 @@ const props = defineProps({
     },
     ItembgColor:{
        type: String,
-        default: '#002F5F',
+        default: '',
     }
 })
 
@@ -71,7 +71,7 @@ function touchend() {
         <div v-if="itemsVisable" class="sm:hidden flex mb-8 justify-center">
         <div class=" flex">
             <div  v-for="(text,i) in props.itemsLenght" :key="i" class="w-[10px] mr-2 h-[10px] bg-[#D9D9D9] rounded-full">
-               <div v-show="i == scrollPage" class="w-full h-full rounded-full " :class="[`bg-[${ItembgColor}]`]"></div>
+               <div v-show="i == scrollPage" class="w-full h-full rounded-full " :class="[ItembgColor]"></div>
             </div>
         </div>
         </div>

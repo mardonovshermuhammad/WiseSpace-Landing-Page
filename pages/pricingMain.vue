@@ -26,7 +26,7 @@ const items = ref<any[]>([
                 <div class="text-center">
                     <h1 class="md:text-[40px] text-[30px] font-bold  text-white uppercase">pricing</h1>
                 </div>
-            <scroll ItembgColor="#4270F7" :ItemsWidth="250" :itemsVisable="true" :itemsLenght="3">
+            <scroll ItembgColor="bg-[#4270F7]" :ItemsWidth="250" :itemsVisable="true" :itemsLenght="3">
             <template #Slotcard>
                 <PriceItem :items="items" ></PriceItem>
             </template>
