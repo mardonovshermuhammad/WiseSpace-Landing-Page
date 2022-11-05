@@ -3,9 +3,9 @@ import { ref,watch } from 'vue';
 import baseInput from './baseInput.vue';
 import BaseIcon from '~/components/BaseComponents/BaseIcons/BaseIcon.vue';
 const items = ref<any[]>([
-  {icon: 'Phone', name: '+998 88 188 90 00'},
-  {icon: 'Email', name: 'ssolutionuz@gmail.com'},
-  {icon: 'Map', name: 'Tashkent, Uzbekistan'},
+  {icon: 'Phone', name: '+998 99 638 99 00', id: ''},
+  {icon: 'Email', name: 'ssolutionuz@gmail.com', id: ''},
+  {icon: 'Map', name: 'Tashkent, Uzbekistan', id: 'FormInput'},
 ])
 </script>
 <template>
@@ -16,7 +16,7 @@ const items = ref<any[]>([
                 <p style="color: rgba(255, 255, 255, 0.8)" 
                   class="md:text-[16px] text-[15px] font-Mregular font-normal mb-10 md:w-[70%] w-[90%]">
                   We will help you enhance quality of education by digitalizing educational process in your institution</p>
-                <div v-for="item in items"   class="flex mb-4 items-center text-md">
+                <div  v-for="item in items" :id="item.id"   class="flex mb-4 items-center text-md">
                    <BaseIcon :name="item.icon"></BaseIcon>
                     <p class="text-[16px] font-Mregular ml-4 font-light">{{ item.name}}</p>
                 </div>
@@ -25,7 +25,7 @@ const items = ref<any[]>([
                 <img src="./Rectangle 1533.png" class="right-0 bottom-0 absolute z-[2]" alt="">
             </div>
         </div>
-        <div class="md:w-2/5 w-full md:mt-0 mt-4">
+        <div class="md:w-2/5 w-full md:mt-0 mt-4 ">
                 <baseInput></baseInput>   
         </div>
     </div>

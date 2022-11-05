@@ -3,11 +3,17 @@ import { ref } from "vue"
 import Carousel from '@/components/carousel/Carousel.vue'
 const items = ref<any[]>([
   { img: "lms1-min", date: "September 13, 2022", 
-    title:"Bringing down the Digital Gap in Higher Education",BtnName: 'Read full article' },
+    title:"Bringing down the Digital Gap in Higher Education",
+    BtnName: 'Read full article',
+     Url: 'https://supportsolution.uz/blog/erp-lms' },
     { img: "blok2-min", date: "September 6, 2022", 
-    title:"“ERP and LMS integration” 2 in 1 in your educational institution",BtnName: 'Read full article' },
+    title:"“ERP and LMS integration” 2 in 1 in your educational institution",
+    BtnName: 'Read full article',
+    Url: 'https://supportsolution.uz/blog/higherEducation' },
     { img: "lmss3-min", date: "August 29, 2022", 
-    title:"How LMS is Changing the Education System?",BtnName: 'Read full article' },
+    title:"How LMS is Changing the Education System?",
+    BtnName: 'Read full article',
+    Url: 'https://supportsolution.uz/blog/lms' },
 ]);
 </script>
 <template>

@@ -53,8 +53,10 @@ const {moveCarousel,atHeadOfList,currentOffset,atEndOfList,carouselWidth,carusel
                         <span class="ml-2 text-[#BDBDBD] text-sm">{{ item.date   }}</span>
                         </div>
                         <p class="mt-4 mb-6 text-[18px] font-Mregular font-medium text-[#002F5F]">{{ item.title }}</p>
-                        <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F] font-Mregular font-meduim"
+                        <a :href="item.Url" target="_blank">
+                          <button class="px-4 py-2 rounded-t rounded-b text-white bg-[#002F5F] font-Mregular font-meduim"
                                 >{{ item.BtnName}}</button>
+                         </a>
                     </div>
                 </div>
             </div>

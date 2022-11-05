@@ -50,21 +50,41 @@ let hover = ref<boolean>(false)
                 </div>
         </div>
         <div class="flex justify-center">
-            <button type="button"
-                class="bg-[#002F5F] text-white border-none outline-none tracking-widest 
-                 rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center items-center">
-                Start trail
-                <div class="flex items-center relative ml-6">
-                     <div  class=" bg-[#002F5F] animatIcon bottom-[2px] left-[-10px] text-white text-base absolute" >
-                       <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.5 15C11.366 15 14.5 11.866 14.5 8C14.5 4.13401 11.366 1 7.5 1C3.63401 1 0.5 4.13401 0.5 8C0.5 11.866 3.63401 
-                          15 7.5 15Z" stroke="white"/>
-                          <path d="M6.44995 5.2002L9.24995 8.0002L6.44995 10.8002" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                      </div>
-                    <span class="text-white text-base font-bold">&horbar;</span>
-                </div>
-            </button>
+             <a href="#Contacts" class="md:flex hidden">
+              <button type="button"
+                  class="bg-[#002F5F] text-white border-none outline-none tracking-widest 
+                  rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center items-center">
+                  Start trail
+                  <div class="flex items-center relative ml-6">
+                      <div  class=" bg-[#002F5F] animatIcon bottom-[2px] left-[-10px] text-white text-base absolute" >
+                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 15C11.366 15 14.5 11.866 14.5 8C14.5 4.13401 11.366 1 7.5 1C3.63401 1 0.5 4.13401 0.5 8C0.5 11.866 3.63401 
+                            15 7.5 15Z" stroke="white"/>
+                            <path d="M6.44995 5.2002L9.24995 8.0002L6.44995 10.8002" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+                      <span class="text-white text-base font-bold">&horbar;</span>
+                  </div>
+              </button>
+             </a>
+             <a href="#FormInput" class="md:hidden flex">
+              <button type="button"
+                  class="bg-[#002F5F] text-white border-none outline-none tracking-widest 
+                  rounded-xl h-[44px] w-[190.83px] py-3 px-5 flex justify-center items-center">
+                  Start trail
+                  <div class="flex items-center relative ml-6">
+                      <div  class=" bg-[#002F5F] animatIcon bottom-[2px] left-[-10px] text-white text-base absolute" >
+                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 15C11.366 15 14.5 11.866 14.5 8C14.5 4.13401 11.366 1 7.5 1C3.63401 1 0.5 4.13401 0.5 8C0.5 11.866 3.63401 
+                            15 7.5 15Z" stroke="white"/>
+                            <path d="M6.44995 5.2002L9.24995 8.0002L6.44995 10.8002" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </div>
+                      <span class="text-white text-base font-bold">&horbar;</span>
+                  </div>
+              </button>
+             </a>
+            
         </div>
     </div>
     </div>
